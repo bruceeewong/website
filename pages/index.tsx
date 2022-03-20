@@ -3,10 +3,11 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import classnames from 'classnames';
 import Footer from '../components/Footer';
+import Image from 'next/image';
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col">
+    <div className=" flex min-h-screen w-screen flex-col">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -15,9 +16,20 @@ const Home: NextPage = () => {
       <Header className={'sticky top-0 z-10 px-8 py-4'} />
 
       <main
-        className={'relative flex max-w-full flex-col justify-center px-8'}
-        style={{ marginBottom: '256px' }}
+        className={
+          'relative flex w-screen flex-1 flex-col  bg-cover bg-right px-8'
+        }
       >
+        <section className={'absolute right-0 top-8 -z-10 h-64 w-64'}>
+          <Image
+            src={
+              'https://gitee.com/bruceeewong/image-bed/raw/master/2022-3-20/1647787314079-profile.jpg'
+            }
+            className={'translate-x-20 rounded-full object-cover'}
+            layout={'fill'}
+            priority
+          />
+        </section>
         <section className={'pt-8'}>
           <h1 className={'text-4xl font-bold'}>你好，</h1>
           <h1 className={'mt-2 text-4xl font-bold'}>我叫王思哲</h1>
@@ -43,7 +55,7 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <Footer className={'absolute bottom-0 w-full bg-gray-light px-8'} />
+      <Footer className={'w-full bg-gray-light px-8'} />
     </div>
   );
 };

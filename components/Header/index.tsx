@@ -13,7 +13,7 @@ const Header: React.FC<StyleProps> = ({ className }) => {
     >
       <div
         className={
-          'flex items-center justify-center bg-blue px-1  font-bold text-white'
+          'flex items-center justify-center rounded-sm bg-blue px-1  font-bold text-white'
         }
       >
         BRUSKI
