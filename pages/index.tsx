@@ -4,8 +4,18 @@ import Header from '../components/Header';
 import classnames from 'classnames';
 import Footer from '../components/Footer';
 import Image from 'next/image';
+import { Carousel } from 'antd';
+import { useState } from 'react';
 
 const Home: NextPage = () => {
+  const [personalTags] = useState<string[]>([
+    'WEB3 BUIDLER',
+    '全栈工程师',
+    '独立工作者',
+    '滑板少年',
+    'B-Boy',
+  ]);
+
   return (
     <div className=" flex min-h-screen w-screen flex-col">
       <Head>
@@ -20,33 +30,50 @@ const Home: NextPage = () => {
           'relative flex w-screen flex-1 flex-col  bg-cover bg-right px-8'
         }
       >
-        <section className={'absolute right-0 top-8 -z-10 h-64 w-64'}>
+        <section className={'absolute right-0 top-8 -z-10 h-60 w-60'}>
           <Image
             src={
               'https://gitee.com/bruceeewong/image-bed/raw/master/2022-3-20/1647787314079-profile.jpg'
             }
-            className={'translate-x-20 rounded-full object-cover'}
+            className={'translate-x-16 rounded-full object-cover'}
             layout={'fill'}
             priority
           />
         </section>
         <section className={'pt-8'}>
-          <h1 className={'text-4xl font-bold'}>你好，</h1>
+          <h1 className={'font-b old text-4xl'}>你好，</h1>
           <h1 className={'mt-2 text-4xl font-bold'}>我叫王思哲</h1>
           <h4 className={'mt-4 text-xl font-bold'}>95后反内卷独立青年</h4>
         </section>
         <section className={'mt-12 flex flex-col justify-center'}>
           <div
             className={classnames(
-              'border-radius-2  self-start rounded-full border-2 border-solid px-4  py-1'
+              'flex justify-center self-start overflow-hidden px-4 py-1',
+              'border-radius-2  rounded-full  border-2 border-sky-600 bg-sky-500'
             )}
           >
-            <span>全栈开发者</span>
+            <Carousel
+              autoplay={true}
+              dotPosition={'left'}
+              dots={false}
+              className={'w-32'}
+            >
+              {personalTags.map((tag) => (
+                <div
+                  key={tag}
+                  className={
+                    'text-center text-sm font-bold leading-6 text-slate-50'
+                  }
+                >
+                  {tag}
+                </div>
+              ))}
+            </Carousel>
           </div>
           <div
             className={classnames(
-              'border-radius-2  self-start rounded-full border-2 border-solid px-4 py-1',
-              'mt-4'
+              'border-radius-2   rounded-full border-2 text-slate-500',
+              'mt-4 self-start px-4 py-1'
             )}
           >
             <span>🤣</span>
@@ -55,7 +82,7 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <Footer className={'w-full bg-gray-light px-8'} />
+      <Footer className={'w-full bg-slate-100 px-8'} />
     </div>
   );
 };

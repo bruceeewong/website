@@ -19,9 +19,10 @@ const Footer: React.FC<StyleProps> = ({ className }) => {
       )}
     >
       <section
-        className={
-          'grid w-full grid-cols-3 items-center items-center justify-items-center gap-6 text-4xl'
-        }
+        className={classnames(
+          'grid w-full grid-cols-3 items-center items-center justify-items-center gap-6 text-4xl',
+          'text-slate-500'
+        )}
       >
         <IoLogoWechat />
         <IoMail />
@@ -32,7 +33,7 @@ const Footer: React.FC<StyleProps> = ({ className }) => {
       </section>
 
       <section className={'mt-10'}>
-        <span>Made with ❤️ by Brrruski</span>
+        <span className={'text-slate-500'}>Made with ❤️ by Brrruski</span>
       </section>
     </footer>
   );
