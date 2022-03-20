@@ -6,15 +6,18 @@ import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex flex-col">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header className={'px-8 py-8'} />
+      <Header className={'sticky top-0 z-10 px-8 py-4'} />
 
-      <main className={'relative flex max-w-full flex-col justify-center px-8'}>
+      <main
+        className={'relative flex max-w-full flex-col justify-center px-8'}
+        style={{ marginBottom: '256px' }}
+      >
         <section className={'pt-8'}>
           <h1 className={'text-4xl font-bold'}>你好，</h1>
           <h1 className={'mt-2 text-4xl font-bold'}>我叫王思哲</h1>
@@ -38,10 +41,9 @@ const Home: NextPage = () => {
             <span className={'ml-2'}>WEB3 ONBOARDING</span>
           </div>
         </section>
-        <section className={'mt-12 h-64 w-full bg-gray'}></section>
       </main>
 
-      <Footer className={'mt-12 w-full bg-gray-light px-8'} />
+      <Footer className={'absolute bottom-0 w-full bg-gray-light px-8'} />
     </div>
   );
 };

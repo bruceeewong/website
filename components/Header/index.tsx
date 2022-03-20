@@ -8,7 +8,7 @@ const Header: React.FC<StyleProps> = ({ className }) => {
     <header
       className={classnames(
         className,
-        'flex w-full justify-between align-middle'
+        'flex w-full justify-between bg-white bg-opacity-70 align-middle backdrop-blur-sm'
       )}
     >
       <div
