@@ -3,17 +3,17 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import classnames from 'classnames';
 import Footer from '../components/Footer';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Carousel } from 'antd';
 import { useState } from 'react';
 
 const Home: NextPage = () => {
   const [personalTags] = useState<string[]>([
-    'WEB3 BUIDLER',
-    '全栈工程师',
-    '独立工作者',
-    '滑板少年',
-    'B-Boy',
+    '👨‍💻全栈工程师',
+    '👨‍💼独立工作者',
+    '👾WEB3 BUIDLER',
+    '🛹滑板仔',
+    '🕺B-Boy',
   ]);
 
   return (
@@ -30,16 +30,15 @@ const Home: NextPage = () => {
           'relative flex w-screen flex-1 flex-col  bg-cover bg-right px-8'
         }
       >
-        <section className={'absolute right-0 top-8 -z-10 h-60 w-60'}>
-          <Image
-            src={
-              'https://gitee.com/bruceeewong/image-bed/raw/master/2022-3-20/1647787314079-profile.jpg'
-            }
-            className={'translate-x-16 rounded-full object-cover'}
-            layout={'fill'}
-            priority
-          />
-        </section>
+        {/*<section className={'absolute right-0 top-8 -z-10 h-60 w-60'}>*/}
+        {/*  <Image*/}
+        {/*    src={*/}
+        {/*      'https://gitee.com/bruceeewong/image-bed/raw/master/2022-3-20/1647787314079-profile.jpg'*/}
+        {/*    }*/}
+        {/*    className={'translate-x-16 rounded-full object-cover'}*/}
+        {/*    layout={'fill'}*/}
+        {/*  />*/}
+        {/*</section>*/}
         <section className={'pt-8'}>
           <h1 className={'font-b old text-4xl'}>你好，</h1>
           <h1 className={'mt-2 text-4xl font-bold'}>我叫王思哲</h1>
@@ -48,7 +47,7 @@ const Home: NextPage = () => {
         <section className={'mt-12 flex flex-col justify-center'}>
           <div
             className={classnames(
-              'flex justify-center self-start overflow-hidden px-4 py-1',
+              'flex justify-center self-start overflow-hidden px-2',
               'border-radius-2  rounded-full  border-2 border-sky-600 bg-sky-500'
             )}
           >
@@ -56,13 +55,13 @@ const Home: NextPage = () => {
               autoplay={true}
               dotPosition={'left'}
               dots={false}
-              className={'w-32'}
+              className={'w-36'}
             >
               {personalTags.map((tag) => (
                 <div
                   key={tag}
                   className={
-                    'text-center text-sm font-bold leading-6 text-slate-50'
+                    'text-center text-sm font-bold leading-8 text-slate-50'
                   }
                 >
                   {tag}
