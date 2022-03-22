@@ -1,12 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Header from '../components/Header';
 import classnames from 'classnames';
-import Footer from '../components/Footer';
 // import Image from 'next/image';
 import { Carousel } from 'antd';
 import { useState } from 'react';
-import Menu from '../components/Menu';
+import Layout from '../components/Layout';
 
 const Home: NextPage = () => {
   const [personalTags] = useState<string[]>([
@@ -16,26 +14,12 @@ const Home: NextPage = () => {
     '🛹滑板仔',
     '🕺B-Boy',
   ]);
-  const [showMenu, setShowMenu] = useState<boolean>(true);
-
   return (
-    <div className=" flex min-h-screen w-screen flex-col">
+    <Layout>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Header
-        className={'fixed top-0 z-20 px-8 py-4'}
-        onClickMenu={() => {
-          setShowMenu((flag) => !flag);
-        }}
-      />
-      <Menu
-        className={classnames('absolute z-10 py-16', {
-          hidden: !showMenu,
-        })}
-      />
 
       <main
         className={classnames(
@@ -52,10 +36,10 @@ const Home: NextPage = () => {
         {/*    layout={'fill'}*/}
         {/*  />*/}
         {/*</section>*/}
-        <section className={'pt-8'}>
+        <section className={'pt-12 font-bold'}>
           <h1 className={'font-b old text-4xl'}>你好，</h1>
-          <h1 className={'mt-2 text-4xl font-bold'}>我叫王思哲</h1>
-          <h4 className={'mt-4 text-xl font-bold'}>95后反内卷独立青年</h4>
+          <h1 className={'mt-2 text-4xl '}>我叫王思哲</h1>
+          <h4 className={'mt-4 text-xl'}>95后反内卷独立青年</h4>
         </section>
         <section className={'mt-12 flex flex-col justify-center'}>
           {/*<div*/}
@@ -82,24 +66,18 @@ const Home: NextPage = () => {
           {/*    ))}*/}
           {/*  </Carousel>*/}
           {/*</div>*/}
-          <div
-            className={classnames(
-              'border-radius-2   rounded-full border-2 text-slate-500',
-              'mt-4 self-start px-4 py-1'
-            )}
-          >
-            <span>🤣</span>
-            <span className={'ml-2'}>WEB3 ONBOARDING</span>
-          </div>
+          {/*<div*/}
+          {/*  className={classnames(*/}
+          {/*    'border-radius-2   rounded-full border-2 text-slate-500',*/}
+          {/*    'mt-4 self-start px-4 py-1'*/}
+          {/*  )}*/}
+          {/*>*/}
+          {/*  <span>🤣</span>*/}
+          {/*  <span className={'ml-2'}>WEB3 ONBOARDING</span>*/}
+          {/*</div>*/}
         </section>
       </main>
-
-      <Footer
-        className={classnames('w-full bg-slate-100 px-8', {
-          hidden: showMenu,
-        })}
-      />
-    </div>
+    </Layout>
   );
 };
 
