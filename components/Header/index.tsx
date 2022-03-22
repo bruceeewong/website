@@ -3,12 +3,16 @@ import React from 'react';
 import { StyleProps } from '../../types/styles';
 import classnames from 'classnames';
 
-const Header: React.FC<StyleProps> = ({ className }) => {
+export type HeaderProps = StyleProps & {
+  onClickMenu: () => void;
+};
+
+const Header: React.FC<HeaderProps> = (props) => {
   return (
     <header
       className={classnames(
-        className,
-        'flex w-full justify-between bg-white bg-opacity-70 align-middle backdrop-blur-sm'
+        props.className,
+        'glassmorphism  flex w-full justify-between bg-white bg-opacity-70 align-middle'
       )}
     >
       <div
@@ -19,7 +23,7 @@ const Header: React.FC<StyleProps> = ({ className }) => {
         BRUSKI
       </div>
       <div>
-        <IoMenu className={'text-3xl'} />
+        <IoMenu className={'text-3xl'} onClick={props.onClickMenu} />
       </div>
     </header>
   );

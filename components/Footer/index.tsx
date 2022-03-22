@@ -13,7 +13,7 @@ import Link from 'next/link';
 const Footer: React.FC<StyleProps> = ({ className }) => {
   const [socialLinks] = useState<Record<string, string>>({
     github: 'https://github.com/bruceeewong',
-    mail: 'mailto://size4real@gmail.com',
+    mail: 'mailto:size4real@gmail.com',
     twitter: 'https://twitter.com/brrruski',
     telegram: 'https://t.me/brrruski',
   });

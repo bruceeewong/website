@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 // import Image from 'next/image';
 import { Carousel } from 'antd';
 import { useState } from 'react';
+import Menu from '../components/Menu';
 
 const Home: NextPage = () => {
   const [personalTags] = useState<string[]>([
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
     '🛹滑板仔',
     '🕺B-Boy',
   ]);
+  const [showMenu, setShowMenu] = useState<boolean>(true);
 
   return (
     <div className=" flex min-h-screen w-screen flex-col">
@@ -23,12 +25,23 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header className={'sticky top-0 z-10 px-8 py-4'} />
+      <Header
+        className={'fixed top-0 z-20 px-8 py-4'}
+        onClickMenu={() => {
+          setShowMenu((flag) => !flag);
+        }}
+      />
+      <Menu
+        className={classnames('absolute z-10 py-16', {
+          hidden: !showMenu,
+        })}
+      />
 
       <main
-        className={
-          'relative flex w-screen flex-1 flex-col  bg-cover bg-right px-8'
-        }
+        className={classnames(
+          'relative flex w-screen flex-1 flex-col  bg-cover bg-right',
+          'mt-16 px-8'
+        )}
       >
         {/*<section className={'absolute right-0 top-8 -z-10 h-60 w-60'}>*/}
         {/*  <Image*/}
@@ -45,30 +58,30 @@ const Home: NextPage = () => {
           <h4 className={'mt-4 text-xl font-bold'}>95后反内卷独立青年</h4>
         </section>
         <section className={'mt-12 flex flex-col justify-center'}>
-          <div
-            className={classnames(
-              'flex justify-center self-start overflow-hidden px-2',
-              'border-radius-2  rounded-full  border-2 border-sky-600 bg-sky-500'
-            )}
-          >
-            <Carousel
-              autoplay={true}
-              dotPosition={'left'}
-              dots={false}
-              className={'w-36'}
-            >
-              {personalTags.map((tag) => (
-                <div
-                  key={tag}
-                  className={
-                    'text-center text-sm font-bold leading-8 text-slate-50'
-                  }
-                >
-                  {tag}
-                </div>
-              ))}
-            </Carousel>
-          </div>
+          {/*<div*/}
+          {/*  className={classnames(*/}
+          {/*    'flex justify-center self-start overflow-hidden px-2',*/}
+          {/*    'border-radius-2  rounded-full  border-2 border-sky-600 bg-sky-500'*/}
+          {/*  )}*/}
+          {/*>*/}
+          {/*  <Carousel*/}
+          {/*    autoplay={true}*/}
+          {/*    dotPosition={'left'}*/}
+          {/*    dots={false}*/}
+          {/*    className={'w-36'}*/}
+          {/*  >*/}
+          {/*    {personalTags.map((tag) => (*/}
+          {/*      <div*/}
+          {/*        key={tag}*/}
+          {/*        className={*/}
+          {/*          'text-center text-sm font-bold leading-8 text-slate-50'*/}
+          {/*        }*/}
+          {/*      >*/}
+          {/*        {tag}*/}
+          {/*      </div>*/}
+          {/*    ))}*/}
+          {/*  </Carousel>*/}
+          {/*</div>*/}
           <div
             className={classnames(
               'border-radius-2   rounded-full border-2 text-slate-500',
@@ -81,7 +94,11 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <Footer className={'w-full bg-slate-100 px-8'} />
+      <Footer
+        className={classnames('w-full bg-slate-100 px-8', {
+          hidden: showMenu,
+        })}
+      />
     </div>
   );
 };
