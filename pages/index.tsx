@@ -3,9 +3,8 @@ import Head from 'next/head';
 import classnames from 'classnames';
 // import Image from 'next/image';
 import { Carousel } from 'antd';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/Layout';
-
 const Home: NextPage = () => {
   const [personalTags] = useState<string[]>([
     '👨‍💻全栈工程师',
@@ -21,11 +20,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main
-        className={classnames(
-          'relative flex w-screen flex-1 flex-col  bg-cover bg-right',
-          'mt-16 px-8'
-        )}
+      <div
+        className={'relative flex w-screen  flex-col  bg-cover bg-right px-8'}
       >
         {/*<section className={'absolute right-0 top-8 -z-10 h-60 w-60'}>*/}
         {/*  <Image*/}
@@ -36,7 +32,7 @@ const Home: NextPage = () => {
         {/*    layout={'fill'}*/}
         {/*  />*/}
         {/*</section>*/}
-        <section className={'pt-12 font-bold'}>
+        <section className={'pt-8 font-bold'}>
           <h1 className={'font-b old text-4xl'}>你好，</h1>
           <h1 className={'mt-2 text-4xl '}>我叫王思哲</h1>
           <h4 className={'mt-4 text-xl'}>95后反内卷独立青年</h4>
@@ -76,7 +72,7 @@ const Home: NextPage = () => {
           {/*  <span className={'ml-2'}>WEB3 ONBOARDING</span>*/}
           {/*</div>*/}
         </section>
-      </main>
+      </div>
     </Layout>
   );
 };

@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     >
       <div
         className={
-          'flex items-center justify-center rounded-sm bg-sky-500 px-1  font-bold text-white'
+          'text-md flex items-center justify-center rounded-md bg-sky-500  px-2 font-bold text-white'
         }
       >
         BRUSKI

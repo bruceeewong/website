@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 @layer utilities {
+    .page-edge {
+        @apply px-8;
+    }
     .glassmorphism {
         @apply backdrop-blur-sm;
+    }
+    .text-overflow-ellipsis {
+        @apply overflow-hidden text-ellipsis whitespace-nowrap;
     }
 }
