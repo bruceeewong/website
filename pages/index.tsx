@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { Carousel } from 'antd';
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
+import CarouselCapsule from '../components/CarouselCapsule';
 const Home: NextPage = () => {
   const [personalTags] = useState<string[]>([
     '👨‍💻全栈工程师',
@@ -37,31 +38,8 @@ const Home: NextPage = () => {
           <h1 className={'mt-2 text-4xl '}>我叫王思哲</h1>
           <h4 className={'mt-4 text-xl'}>95后反内卷独立青年</h4>
         </section>
-        <section className={'mt-12 flex flex-col justify-center'}>
-          {/*<div*/}
-          {/*  className={classnames(*/}
-          {/*    'flex justify-center self-start overflow-hidden px-2',*/}
-          {/*    'border-radius-2  rounded-full  border-2 border-sky-600 bg-sky-500'*/}
-          {/*  )}*/}
-          {/*>*/}
-          {/*  <Carousel*/}
-          {/*    autoplay={true}*/}
-          {/*    dotPosition={'left'}*/}
-          {/*    dots={false}*/}
-          {/*    className={'w-36'}*/}
-          {/*  >*/}
-          {/*    {personalTags.map((tag) => (*/}
-          {/*      <div*/}
-          {/*        key={tag}*/}
-          {/*        className={*/}
-          {/*          'text-center text-sm font-bold leading-8 text-slate-50'*/}
-          {/*        }*/}
-          {/*      >*/}
-          {/*        {tag}*/}
-          {/*      </div>*/}
-          {/*    ))}*/}
-          {/*  </Carousel>*/}
-          {/*</div>*/}
+        <section className={'mt-8'}>
+          <CarouselCapsule texts={personalTags} />
           {/*<div*/}
           {/*  className={classnames(*/}
           {/*    'border-radius-2   rounded-full border-2 text-slate-500',*/}
