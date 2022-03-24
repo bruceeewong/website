@@ -1,14 +1,14 @@
-import Layout from '../../components/Layout';
+import Layout from '../components/Layout';
 import React, { useEffect, useMemo, useState } from 'react';
 import classnames from 'classnames';
 import Head from 'next/head';
-import { WEBSITE_TITLE } from '../../constants';
+import { WEBSITE_TITLE } from '../constants';
 import { MDXProvider } from '@mdx-js/react';
-import { components } from '../../components/MdxComponents';
-import { StyleProps } from '../../types/styles';
+import { components } from '../components/MdxComponents';
+import { StyleProps } from '../types/styles';
 import { useRouter } from 'next/router';
-import { isNonEmptyArray } from '../../ utils/checker';
-import { projects } from '../../constants/projects';
+import { isNonEmptyArray } from '../ utils/checker';
+import { projects } from '../constants/projects';
 
 export type ProjectPageProps = {
   meta: Record<string, any>;
