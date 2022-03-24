@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import '../styles/markdown-style-swiss.css';
+import '../components/MdxComponents/markdown-style.css';
 import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {

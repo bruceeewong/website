@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import React, { PropsWithChildren, useState } from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 import Head from 'next/head';
 import { WEBSITE_TITLE } from '../../constants';
