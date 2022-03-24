@@ -2,12 +2,17 @@ import Link from 'next/link';
 import { StyleProps } from '../../types/styles';
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import { projects } from '../../constants/projects';
+import { isNonEmptyArray } from '../../ utils/checker';
 
 const Menu: React.FC<StyleProps> = ({ className }) => {
   const [links] = useState([
     { key: 'home', path: '/' },
     { key: 'blog', path: 'https://www.bruski.wang/' },
-    { key: 'project', path: '/project' },
+    {
+      key: 'project',
+      path: isNonEmptyArray(projects) ? `/project/${projects[0].name}` : '/',
+    },
     { key: 'roadmap', path: '/roadmap' },
     { key: 'nft_gallery', path: '/nft_gallery' },
   ]);
