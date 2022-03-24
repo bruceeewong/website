@@ -1,6 +1,8 @@
 import Layout from '../../components/Layout';
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import Head from 'next/head';
+import { WEBSITE_TITLE } from '../../constants';
 
 const ProjectPage: React.FC = () => {
   const [activeProjKey, setActiveProjKey] = useState('marx');
@@ -25,6 +27,10 @@ const ProjectPage: React.FC = () => {
 
   return (
     <Layout showFooter={false}>
+      <Head>
+        <title>Roadmap | {WEBSITE_TITLE}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={'flex flex-1 flex-col justify-between'}>
         <article className={'page-edge mb-40 flex-1'}>
           <h1 className={'text-3xl font-bold'}>项目</h1>
@@ -37,11 +43,7 @@ const ProjectPage: React.FC = () => {
         </article>
 
         <nav className={'fixed bottom-0 z-10  bg-slate-100'}>
-          <div
-            className={
-              'flex w-screen overflow-x-auto whitespace-nowrap py-4 pl-4'
-            }
-          >
+          <div className={'scroll-view-x flex w-screen py-4 pl-4'}>
             {projects.map((proj, index) => (
               <div
                 key={proj.key}

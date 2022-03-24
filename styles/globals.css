@@ -9,7 +9,22 @@
     .glassmorphism {
         @apply backdrop-blur-sm;
     }
+    .scroll-view-x {
+        @apply overflow-x-auto whitespace-nowrap;
+    }
     .text-overflow-ellipsis {
         @apply overflow-hidden text-ellipsis whitespace-nowrap;
+    }
+    .text-overflow-ellipsis-2 {
+        @apply overflow-hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .text-overflow-ellipsis-4 {
+        @apply overflow-hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
     }
 }

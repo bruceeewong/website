@@ -6,6 +6,7 @@ import { Carousel } from 'antd';
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import CarouselCapsule from '../components/CarouselCapsule';
+import { WEBSITE_TITLE } from '../constants';
 const Home: NextPage = () => {
   const [personalTags] = useState<string[]>([
     '👨‍💻全栈工程师',
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Create Next App</title>
+        <title>Home | {WEBSITE_TITLE}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
