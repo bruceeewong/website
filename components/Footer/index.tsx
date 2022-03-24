@@ -31,18 +31,26 @@ const Footer: React.FC<StyleProps> = ({ className }) => {
         )}
       >
         <Link href={socialLinks.twitter}>
-          <IoLogoTwitter />
+          <a>
+            <IoLogoTwitter />
+          </a>
         </Link>
         <Link href={socialLinks.telegram}>
-          <FaTelegramPlane />
+          <a>
+            <FaTelegramPlane />
+          </a>
         </Link>
 
         <Link href={socialLinks.mail}>
-          <IoMail />
+          <a>
+            <IoMail />
+          </a>
         </Link>
 
         <Link href={socialLinks.github}>
-          <IoLogoGithub />
+          <a>
+            <IoLogoGithub />
+          </a>
         </Link>
       </section>
 

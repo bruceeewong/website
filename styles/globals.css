@@ -10,7 +10,7 @@
         @apply backdrop-blur-sm;
     }
     .scroll-view-x {
-        @apply overflow-x-auto whitespace-nowrap;
+        @apply overflow-x-auto overflow-y-hidden whitespace-nowrap;
     }
     .text-overflow-ellipsis {
         @apply overflow-hidden text-ellipsis whitespace-nowrap;

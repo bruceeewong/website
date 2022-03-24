@@ -13,9 +13,6 @@ const ProjectPage: React.FC = () => {
     {
       key: 'roam_in_hust',
     },
-    {
-      key: 'aaa',
-    },
   ]);
   function projectName(key: string) {
     const map: Record<string, string> = {
@@ -42,14 +39,13 @@ const ProjectPage: React.FC = () => {
           </p>
         </article>
 
-        <nav className={'fixed bottom-0 z-10  bg-slate-100'}>
+        <nav className={'fixed bottom-0 z-10 bg-slate-100'}>
           <div className={'scroll-view-x flex w-screen py-4 pl-4'}>
             {projects.map((proj, index) => (
               <div
                 key={proj.key}
                 className={classnames(
-                  'mr-4 flex-shrink-0 ',
-                  'w-28 rounded-lg bg-white px-4 py-2 shadow',
+                  'mr-4 w-28 flex-shrink-0 gap-4 rounded-lg bg-white px-4 py-2 shadow',
                   {
                     '!bg-sky-500 text-white': activeProjKey === proj.key,
                   }
