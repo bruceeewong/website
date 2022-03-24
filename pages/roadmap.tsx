@@ -5,7 +5,7 @@ import { WEBSITE_TITLE } from '../constants';
 import Button from '../components/Button';
 import { isNonEmptyArray } from '../ utils/checker';
 
-const RoadmapPage: React.FC = () => {
+const RoadmapPage: React.FC = (props) => {
   const [myEvents, setMyEvents] = useState([
     {
       datetime: '2021-03-07',

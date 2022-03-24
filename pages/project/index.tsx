@@ -1,10 +1,16 @@
 import Layout from '../../components/Layout';
-import React, { useState } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 import classnames from 'classnames';
 import Head from 'next/head';
 import { WEBSITE_TITLE } from '../../constants';
+import { MDXProvider } from '@mdx-js/react';
+import { components } from '../../components/MdxComponents';
 
-const ProjectPage: React.FC = () => {
+export type ProjectPageProps = {
+  meta: Record<string, any>;
+};
+
+const ProjectPage: React.FC<ProjectPageProps> = (props) => {
   const [activeProjKey, setActiveProjKey] = useState('marx');
   const [projects] = useState([
     {
@@ -31,12 +37,14 @@ const ProjectPage: React.FC = () => {
       <div className={'flex flex-1 flex-col justify-between'}>
         <article className={'page-edge mb-40 flex-1'}>
           <h1 className={'text-3xl font-bold'}>项目</h1>
-          <h3 className={'my-3 text-xl font-bold'}>Marx|火星移民计划</h3>
-          <p className={''}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aliquid
-            voluptate, similique possimus consectetur, iusto blanditiis, omnis
-            quasi nulla quia est accusamus in sit!
-          </p>
+          <h3 className={'text-overflow-ellipsis text-xl font-bold'}>
+            {props.meta.title}
+          </h3>
+          <small className={'text-sm'}>{props.meta.datetime}</small>
+          <hr className={'my-2'} />
+          <div className={'mt-4'}>
+            <MDXProvider components={components}>{props.children}</MDXProvider>
+          </div>
         </article>
 
         <nav className={'fixed bottom-0 z-10 bg-slate-100'}>
