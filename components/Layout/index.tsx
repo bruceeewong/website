@@ -27,6 +27,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
       />
       <main
         className={classnames(props.className, 'mt-20 flex flex-1 flex-col')}
+        style={props.style}
       >
         {props.children}
       </main>

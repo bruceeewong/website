@@ -8,7 +8,7 @@ export type CarouselCapsuleProps = StyleProps & {
 };
 
 function useSizeClassnames(size: string) {
-  const sizeMap = useRef(new Map([['normal', 'w-40 h-8 leading-8']]));
+  const sizeMap = useRef(new Map([['normal', 'w-32 h-8 leading-8']]));
   return useMemo(
     () => sizeMap.current.get(size) || sizeMap.current.get('normal'),
     [size]
@@ -23,7 +23,7 @@ const CarouselCapsule: React.FC<CarouselCapsuleProps> = (props) => {
     <Carousel
       className={classnames(
         props.className,
-        'overflow-hidden rounded-full bg-sky-500 shadow-md',
+        'overflow-hidden rounded-full bg-sky-500',
         sizeClassnames
       )}
       autoplay={true}
@@ -32,15 +32,15 @@ const CarouselCapsule: React.FC<CarouselCapsuleProps> = (props) => {
     >
       {props.texts.map((text) => (
         <div key={text}>
-          <h3
+          <small
             className={classnames(
               'text-overflow-ellipsis flex items-center justify-center',
-              'text-white',
+              'font-bold text-slate-50',
               sizeClassnames
             )}
           >
             {text}
-          </h3>
+          </small>
         </div>
       ))}
     </Carousel>

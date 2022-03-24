@@ -14,7 +14,7 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
       path: isNonEmptyArray(projects) ? `/project/${projects[0].name}` : '/',
     },
     { key: 'roadmap', path: '/roadmap' },
-    { key: 'nft_gallery', path: '/nft_gallery' },
+    // { key: 'nft_gallery', path: '/nft_gallery' },
   ]);
   function menuName(key: string): string {
     const map: Record<string, string> = {
@@ -22,7 +22,7 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
       blog: '博客',
       project: '项目',
       roadmap: '人生路线',
-      nft_gallery: 'NFT藏品',
+      // nft_gallery: 'NFT藏品',
     };
     return map[key] || '';
   }
