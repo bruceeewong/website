@@ -12,7 +12,8 @@ const withMDX = require('@next/mdx')({
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['gitee.com'],
+    loader: 'akamai',
+    path: '',
   },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 };

@@ -22,7 +22,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         className={classnames(
           props.className,
           'mt-20 flex flex-1 flex-col',
-          'tablet:mt-30'
+          'tablet:mt-24'
         )}
         style={props.style}
       >
