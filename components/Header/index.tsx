@@ -1,31 +1,55 @@
-import { IoMenu } from 'react-icons/io5';
-import React from 'react';
+import { IoMenu, IoClose } from 'react-icons/io5';
+import React, { useState } from 'react';
 import { StyleProps } from '../../types/styles';
 import classnames from 'classnames';
 import Link from 'next/link';
+import Menu from '../Menu';
+import { useBreakpoint } from '../../ utils/breakpoint';
 
-export type HeaderProps = StyleProps & {
-  onClickMenu: () => void;
-};
+export type HeaderProps = StyleProps;
 
 const Header: React.FC<HeaderProps> = (props) => {
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+  const { isBreakpoint } = useBreakpoint();
+
   return (
     <header
       className={classnames(
         props.className,
-        'glassmorphism  flex w-full justify-between bg-white bg-opacity-70 align-middle'
+        'glassmorphism relative flex w-full justify-between bg-white bg-opacity-70 align-middle'
       )}
     >
       <div
-        className={
-          'text-md flex items-center justify-center rounded-md bg-sky-500  px-2 font-bold text-white'
-        }
+        className={classnames(
+          'text-md flex items-center justify-center rounded-md bg-sky-500  px-2 font-bold text-white',
+          'desktop:text-xl'
+        )}
       >
         <Link href={'/'}>BRUSKI</Link>
       </div>
-      <div>
-        <IoMenu className={'text-3xl'} onClick={props.onClickMenu} />
-      </div>
+      {isBreakpoint(['mobile', 'tablet']) ? (
+        <div className={classnames('text-3xl')}>
+          {showMenu ? (
+            <IoClose
+              onClick={() => {
+                setShowMenu(false);
+              }}
+            />
+          ) : (
+            <IoMenu
+              onClick={() => {
+                setShowMenu(true);
+              }}
+            />
+          )}
+        </div>
+      ) : null}
+
+      <Menu
+        className={classnames('absolute top-16 left-0 z-30', {
+          hidden: isBreakpoint(['desktop']) ? false : !showMenu,
+        })}
+      />
     </header>
   );
 };

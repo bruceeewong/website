@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { WEBSITE_TITLE } from '../constants';
 import avatarPic from '../public/avatar.png';
 import Typist from 'react-text-typist';
+import classnames from 'classnames';
 
 const Home: NextPage = () => {
   const [personalTags] = useState<string[]>([
@@ -23,38 +24,69 @@ const Home: NextPage = () => {
       </Head>
 
       <div
-        className={
-          'relative mt-6 flex w-screen flex-1 flex-col  bg-cover bg-right px-8'
-        }
-        style={{
-          backgroundImage: 'url(/layered-waves-haikei@23.svg)',
-        }}
+        className={classnames(
+          'bg relative mt-6 flex flex-1  flex-col bg-cover bg-right px-8'
+        )}
       >
-        <section className={'flex justify-between'}>
-          <div>
-            <h1 className={'text-3xl'}>你好，</h1>
-            <h1 className={'mt-1 text-3xl '}>我叫王思哲</h1>
-            <h4 className={'text-md mt-1'}>95后反内卷独立青年</h4>
-          </div>
-          <div className={'h-28 w-28'}>
-            <Image src={avatarPic} alt={'avatar'} className={'rounded-full'} />
-          </div>
-        </section>
-        <section className={'mt-4 flex text-xl'}>
-          <span className={'mr-1'}>我是一位</span>
-          <Typist
-            sentences={personalTags}
-            loop={true}
-            showCursor={false}
-            typingSpeed={100}
-            style={{
-              background: '-webkit-linear-gradient(0deg, #0ea5e9, #8b5cf6)',
-              '-webkit-background-clip': 'text',
-              '-webkit-text-fill-color': 'transparent',
-            }}
-          />
-        </section>
+        <div className={classnames('desktop:mx-auto desktop:w-[56rem]')}>
+          <section className={classnames('flex justify-between ')}>
+            <div>
+              <h1 className={classnames('text-3xl', 'desktop:text-6xl')}>
+                你好，
+              </h1>
+              <h1 className={classnames('mt-1 text-3xl', 'desktop:text-6xl')}>
+                我叫王思哲
+              </h1>
+              <h4
+                className={classnames(
+                  'text-md mt-1',
+                  'desktop:mt-3 desktop:text-3xl'
+                )}
+              >
+                95后反内卷独立青年
+              </h4>
+            </div>
+            <div
+              className={classnames('h-28 w-28', 'desktop:h-48 desktop:w-48')}
+            >
+              <Image
+                src={avatarPic}
+                alt={'avatar'}
+                className={'rounded-full'}
+              />
+            </div>
+          </section>
+          <section
+            className={classnames('mt-4 flex text-xl', 'desktop:text-4xl')}
+          >
+            <span className={'mr-1'}>我是一位</span>
+            <Typist
+              sentences={personalTags}
+              loop={true}
+              showCursor={false}
+              typingSpeed={100}
+              style={{
+                background: '-webkit-linear-gradient(0deg, #0ea5e9, #8b5cf6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            />
+          </section>
+        </div>
       </div>
+
+      <style jsx>{`
+        .bg {
+          background-image: url('/layered-waves-haikei@23.svg');
+          background-repeat: no-repeat;
+          background-position-y: bottom;
+        }
+        @media (min-width: 1280px) {
+          .bg {
+            background-image: url('/layered-waves-haikei@169.svg');
+          }
+        }
+      `}</style>
     </Layout>
   );
 };
