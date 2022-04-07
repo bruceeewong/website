@@ -26,6 +26,9 @@ const Home: NextPage = () => {
         className={
           'relative mt-6 flex w-screen flex-1 flex-col  bg-cover bg-right px-8'
         }
+        style={{
+          backgroundImage: 'url(/layered-waves-haikei@23.svg)',
+        }}
       >
         <section className={'flex justify-between'}>
           <div>

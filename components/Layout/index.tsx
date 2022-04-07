@@ -32,7 +32,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
         {props.children}
       </main>
       {showFooter && (
-        <Footer className={classnames('w-full bg-slate-100 px-8')} />
+        <Footer className={classnames('w-full bg-blue-50 px-8')} />
       )}
     </div>
   );

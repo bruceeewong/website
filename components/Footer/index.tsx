@@ -1,61 +1,58 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleProps } from '../../types/styles';
-import {
-  IoLogoGithub,
-  IoLogoTwitter,
-  IoLogoWechat,
-  IoMail,
-} from 'react-icons/io5';
+import { IoLogoGithub, IoLogoTwitter, IoMail } from 'react-icons/io5';
 import { FaTelegramPlane } from 'react-icons/fa';
 import classnames from 'classnames';
 import Link from 'next/link';
 
 const Footer: React.FC<StyleProps> = ({ className }) => {
-  const [socialLinks] = useState<Record<string, string>>({
-    github: 'https://github.com/bruceeewong',
-    mail: 'mailto:size4real@gmail.com',
-    twitter: 'https://twitter.com/brrruski',
-    telegram: 'https://t.me/brrruski',
-  });
+  const links = [
+    {
+      name: 'twitter',
+      url: 'https://twitter.com/brrruski',
+      icon: IoLogoTwitter,
+    },
+    {
+      name: 'mail',
+      url: 'mailto:size4real@gmail.com',
+      icon: IoMail,
+    },
+    {
+      name: 'telegram',
+      url: 'https://t.me/brrruski',
+      icon: FaTelegramPlane,
+    },
+    {
+      name: 'github',
+      url: 'https://github.com/bruceeewong',
+      icon: IoLogoGithub,
+    },
+  ];
+
   return (
     <footer
       className={classnames(
-        'flex flex-col items-center justify-center py-12',
+        'flex flex-col items-center justify-center py-8',
         className
       )}
     >
       <section
         className={classnames(
-          'grid w-full grid-cols-4 items-center items-center justify-items-center gap-6 text-4xl',
-          'text-slate-500'
+          'grid w-64 grid-cols-4 items-center items-center justify-items-center gap-4 text-3xl',
+          'text-slate-400'
         )}
       >
-        <Link href={socialLinks.twitter}>
-          <a>
-            <IoLogoTwitter />
-          </a>
-        </Link>
-        <Link href={socialLinks.telegram}>
-          <a>
-            <FaTelegramPlane />
-          </a>
-        </Link>
-
-        <Link href={socialLinks.mail}>
-          <a>
-            <IoMail />
-          </a>
-        </Link>
-
-        <Link href={socialLinks.github}>
-          <a>
-            <IoLogoGithub />
-          </a>
-        </Link>
+        {links.map((link) => (
+          <Link key={link.name} href={link.url}>
+            <a target={'_blank'}>
+              <link.icon />
+            </a>
+          </Link>
+        ))}
       </section>
 
-      <section className={'mt-10'}>
-        <span className={'text-slate-500'}>Made with ❤️ by Brrruski</span>
+      <section className={'mt-6'}>
+        <span className={'text-slate-400'}>Made with ❤️ by Brrruski</span>
       </section>
     </footer>
   );
