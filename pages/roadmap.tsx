@@ -60,7 +60,7 @@ const RoadmapPage: React.FC = (props) => {
       </Head>
 
       <div className={'page-edge'}>
-        <h1 className={'m text-2xl font-bold'}>人生路线</h1>
+        <h1 className={'m text-2xl'}>人生路线</h1>
         {/*<section className={'scroll-view-x mt-4 flex'}>*/}
         {/*  <Button size={'small'}>全部</Button>*/}
         {/*  <Button size={'small'}>学业</Button>*/}
@@ -81,9 +81,7 @@ const RoadmapPage: React.FC = (props) => {
               </div>
               <div className={'flex-1 px-4 py-2'}>
                 <small className={'text-xs'}>{e.datetime}</small>
-                <h3
-                  className={'text-overflow-ellipsis-2 text-md w-64 font-bold'}
-                >
+                <h3 className={'text-overflow-ellipsis-2 text-md w-64'}>
                   {e.name}
                 </h3>
                 {isNonEmptyArray(e.tags) ? (

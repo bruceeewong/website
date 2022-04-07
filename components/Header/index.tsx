@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     <header
       className={classnames(
         props.className,
-        'glassmorphism relative flex w-full justify-between bg-white bg-opacity-70 align-middle'
+        'glassmorphism flex w-full justify-between bg-white bg-opacity-70 align-middle'
       )}
     >
       <div

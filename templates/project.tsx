@@ -22,10 +22,8 @@ type NavBarProps = StyleProps & {
 const NavBar: React.FC<NavBarProps> = (props) => {
   return (
     <nav
-      className={classnames(
-        props.className,
-        'fixed bottom-0 z-10 bg-slate-100'
-      )}
+      className={classnames(props.className, 'bg-slate-100')}
+      style={props.style}
     >
       <div className={'scroll-view-x flex w-screen py-4 pl-4'}>
         {props.items.map((item, index) => (
@@ -34,7 +32,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             className={classnames(
               'mr-4 w-28 flex-shrink-0 gap-4 rounded-lg bg-white px-4 py-2 shadow',
               {
-                '!bg-sky-500 text-white': props.activeItemName === item.name,
+                '!bg-sky-500 text-sky-500': props.activeItemName === item.name,
               }
             )}
             onClick={() => {
@@ -89,7 +87,7 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={'flex flex-1 flex-col justify-between'}>
-        <article className={'page-edge mb-40 flex-1'}>
+        <article className={'mb-40 flex-1 px-8'}>
           <h1 className={'text-3xl font-bold'}>项目</h1>
           <h3 className={'text-overflow-ellipsis mt-2 text-xl font-bold'}>
             {props.meta.title}
@@ -103,6 +101,10 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
       </div>
 
       <NavBar
+        className={'fixed z-10'}
+        style={{
+          bottom: '0px',
+        }}
         items={projectInfoList}
         activeItemName={activeProj}
         onSelect={(name) => handleRouteTo(name)}
