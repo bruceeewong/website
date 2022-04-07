@@ -50,12 +50,16 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
     <nav>
       <ul className={classnames('desktop:flex')}>
         {links.map((link) => (
-          <li key={link.key} className={classnames('px-8', 'desktop:px-4')}>
+          <li
+            key={link.key}
+            className={classnames('px-8', 'tablet:px-16', 'desktop:px-4')}
+          >
             <Link href={link.path}>
               <a
                 className={classnames(
                   'link block border-b-2 py-3 text-lg',
-                  'desktop:hover: desktop:border-0 desktop:py-0 desktop:hover:outline-1',
+                  'tablet:py-6 tablet:text-2xl',
+                  'desktop:hover: desktop:border-0 desktop:py-0',
                   {
                     'link--active': activeItem === link.key,
                   }
@@ -79,15 +83,18 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
         .link--active {
           color: #0ea5e9;
         }
-        .link:hover:after,
-        .link--active:after {
-          content: '';
-          opacity: 1;
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 2px;
-          background-color: #0ea5e9;
+
+        @media (min-width: 1280px) {
+          .link:hover:after,
+          .link--active:after {
+            content: '';
+            opacity: 1;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #0ea5e9;
+          }
         }
       `}</style>
     </nav>

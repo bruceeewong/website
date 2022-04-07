@@ -22,13 +22,13 @@ const Header: React.FC<HeaderProps> = (props) => {
       <div
         className={classnames(
           'text-md flex items-center justify-center rounded-md bg-sky-500  px-2 font-bold text-white',
-          'desktop:text-xl'
+          'tablet:text-2xl'
         )}
       >
         <Link href={'/'}>BRUSKI</Link>
       </div>
       {isBreakpoint(['mobile', 'tablet']) ? (
-        <div className={classnames('text-3xl')}>
+        <div className={classnames('text-3xl', 'tablet:text-4xl')}>
           {showMenu ? (
             <IoClose
               onClick={() => {
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       ) : null}
 
       <Menu
-        className={classnames('absolute top-16 left-0 z-30', {
+        className={classnames('absolute top-16 left-0 z-30', 'tablet:top-20', {
           hidden: isBreakpoint(['desktop']) ? false : !showMenu,
         })}
       />

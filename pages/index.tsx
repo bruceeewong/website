@@ -25,30 +25,34 @@ const Home: NextPage = () => {
 
       <div
         className={classnames(
-          'bg relative mt-6 flex flex-1  flex-col bg-cover bg-right px-8'
+          'bg relative mt-6 flex flex-1  flex-col bg-cover bg-right px-8',
+          'tablet:px-16'
         )}
       >
         <div className={classnames('desktop:mx-auto desktop:w-[56rem]')}>
-          <section className={classnames('flex justify-between ')}>
+          <section className={classnames('flex justify-between')}>
             <div>
-              <h1 className={classnames('text-3xl', 'desktop:text-6xl')}>
+              <h1 className={classnames('text-3xl', 'tablet:text-6xl')}>
                 你好，
               </h1>
-              <h1 className={classnames('mt-1 text-3xl', 'desktop:text-6xl')}>
+              <h1
+                className={classnames(
+                  'mt-1 text-3xl',
+                  'tablet:mt-3 tablet:text-6xl'
+                )}
+              >
                 我叫王思哲
               </h1>
               <h4
                 className={classnames(
                   'text-md mt-1',
-                  'desktop:mt-3 desktop:text-3xl'
+                  'tablet:mt-3 tablet:text-3xl'
                 )}
               >
                 95后反内卷独立青年
               </h4>
             </div>
-            <div
-              className={classnames('h-28 w-28', 'desktop:h-48 desktop:w-48')}
-            >
+            <div className={classnames('h-28 w-28', 'tablet:h-48 tablet:w-48')}>
               <Image
                 src={avatarPic}
                 alt={'avatar'}
@@ -57,7 +61,10 @@ const Home: NextPage = () => {
             </div>
           </section>
           <section
-            className={classnames('mt-4 flex text-xl', 'desktop:text-4xl')}
+            className={classnames(
+              'mt-2 flex text-xl',
+              'tablet:mt-4 tablet:text-4xl'
+            )}
           >
             <span className={'mr-1'}>我是一位</span>
             <Typist

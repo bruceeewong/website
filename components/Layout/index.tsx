@@ -15,14 +15,14 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <Header
         className={classnames(
           'fixed top-0 z-40 px-8 py-6',
-          'desktop:px-16 desktop:py-6'
+          'tablet:px-16 tablet:py-8'
         )}
       />
       <main
         className={classnames(
           props.className,
           'mt-20 flex flex-1 flex-col',
-          'desktop:mt-30'
+          'tablet:mt-30'
         )}
         style={props.style}
       >
