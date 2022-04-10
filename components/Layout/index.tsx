@@ -11,11 +11,11 @@ export type LayoutProps = StyleProps & {
 const Layout: React.FC<LayoutProps> = (props) => {
   const { showFooter = true } = props;
   return (
-    <div className={'flex min-h-screen w-screen flex-col'}>
+    <div className={'flex min-h-screen flex-col'}>
       <Header
         className={classnames(
           'fixed top-0 z-40 px-8 py-6',
-          'tablet:px-16 tablet:py-8'
+          'tablet:px-16 tablet:py-6'
         )}
       />
       <main

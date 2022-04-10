@@ -88,8 +88,8 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
       </Head>
       <div className={'flex flex-1 flex-col justify-between'}>
         <article className={'mb-40 flex-1 px-8'}>
-          <h1 className={'text-3xl font-bold'}>项目</h1>
-          <h3 className={'text-overflow-ellipsis mt-2 text-xl font-bold'}>
+          <h1 className={'text-3xl'}>项目</h1>
+          <h3 className={'text-overflow-ellipsis mt-2 text-xl'}>
             {props.meta.title}
           </h3>
           <small className={'text-sm'}>{props.meta.datetime}</small>
@@ -101,10 +101,12 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
       </div>
 
       <NavBar
-        className={'fixed z-10'}
-        style={{
-          bottom: '0px',
-        }}
+        className={'fixed bottom-0 z-10'}
+        style={
+          {
+            // bottom: '0px',
+          }
+        }
         items={projectInfoList}
         activeItemName={activeProj}
         onSelect={(name) => handleRouteTo(name)}
