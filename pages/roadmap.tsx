@@ -76,7 +76,7 @@ const RoadmapPage: React.FC = (props) => {
         className={classnames(
           'px-8',
           'tablet:px-16',
-          'desktop:mx-auto desktop:w-[64rem]'
+          'desktop:mx-auto desktop:w-[56rem]'
         )}
       >
         <h1 className={classnames('text-2xl', 'tablet:text-4xl')}>人生路线</h1>

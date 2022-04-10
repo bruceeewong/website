@@ -22,17 +22,25 @@ type NavBarProps = StyleProps & {
 const NavBar: React.FC<NavBarProps> = (props) => {
   return (
     <nav
-      className={classnames(props.className, 'bg-slate-100')}
+      className={classnames(
+        props.className,
+        'scroll-view-x w-screen bg-slate-100'
+      )}
       style={props.style}
     >
-      <div className={'scroll-view-x flex w-screen py-4 pl-4'}>
+      <div
+        className={classnames(
+          'flex py-4 pl-8',
+          'desktop:mx-auto desktop:w-[56rem]'
+        )}
+      >
         {props.items.map((item, index) => (
           <div
             key={item.name}
             className={classnames(
-              'mr-4 w-28 flex-shrink-0 gap-4 rounded-lg bg-white px-4 py-2 shadow',
+              'mr-4 w-28 flex-shrink-0 cursor-pointer gap-4 rounded-lg bg-white px-4 py-2 shadow',
               {
-                '!bg-sky-500 text-sky-500': props.activeItemName === item.name,
+                '!bg-sky-500 text-white': props.activeItemName === item.name,
               }
             )}
             onClick={() => {
@@ -86,13 +94,25 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
         <title>Roadmap | {WEBSITE_TITLE}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={'flex flex-1 flex-col justify-between'}>
+      <div
+        className={classnames(
+          'flex flex-1 flex-col justify-between',
+          'desktop:mx-auto desktop:w-[56rem]'
+        )}
+      >
         <article className={'mb-40 flex-1 px-8'}>
-          <h1 className={'text-3xl'}>项目</h1>
-          <h3 className={'text-overflow-ellipsis mt-2 text-xl'}>
+          <h1 className={classnames('text-2xl', 'tablet:text-4xl')}>项目</h1>
+          <h3
+            className={classnames(
+              'text-overflow-ellipsis mt-2 text-lg',
+              'tablet:text-2xl'
+            )}
+          >
             {props.meta.title}
           </h3>
-          <small className={'text-sm'}>{props.meta.datetime}</small>
+          <small className={classnames('text-sm', 'tablet:text-lg')}>
+            {props.meta.datetime}
+          </small>
           <hr className={'my-2'} />
           <div className={'mt-4'}>
             <MDXProvider components={components}>{props.children}</MDXProvider>
@@ -102,11 +122,6 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
 
       <NavBar
         className={'fixed bottom-0 z-10'}
-        style={
-          {
-            // bottom: '0px',
-          }
-        }
         items={projectInfoList}
         activeItemName={activeProj}
         onSelect={(name) => handleRouteTo(name)}
