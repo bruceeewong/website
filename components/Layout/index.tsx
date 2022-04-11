@@ -3,8 +3,11 @@ import Header from '../Header';
 import classnames from 'classnames';
 import Footer from '../Footer';
 import { StyleProps } from '../../types/styles';
+import { WEBSITE_TITLE } from '../../constants';
+import Head from 'next/head';
 
 export type LayoutProps = StyleProps & {
+  title: string;
   showFooter?: boolean;
 };
 
@@ -12,6 +15,13 @@ const Layout: React.FC<LayoutProps> = (props) => {
   const { showFooter = true } = props;
   return (
     <div className={'flex min-h-screen flex-col'}>
+      <Head>
+        <title>
+          {props.title} | {WEBSITE_TITLE}
+        </title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <Header
         className={classnames(
           'fixed top-0 z-40 px-8 py-6',

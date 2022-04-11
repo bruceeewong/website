@@ -1,8 +1,6 @@
 import Layout from '../components/Layout';
 import React, { useEffect, useMemo, useState } from 'react';
 import classnames from 'classnames';
-import Head from 'next/head';
-import { WEBSITE_TITLE } from '../constants';
 import { MDXProvider } from '@mdx-js/react';
 import { components } from '../components/MdxComponents';
 import { StyleProps } from '../types/styles';
@@ -19,6 +17,7 @@ type NavBarProps = StyleProps & {
   activeItemName: string;
   onSelect: (name: string) => void;
 };
+
 const NavBar: React.FC<NavBarProps> = (props) => {
   return (
     <nav
@@ -31,6 +30,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
       <div
         className={classnames(
           'flex py-4 pl-8',
+          'tablet:pl-16',
           'desktop:mx-auto desktop:w-[56rem]'
         )}
       >
@@ -66,6 +66,8 @@ function projectName(key: string) {
 
 const ProjectPage: React.FC<ProjectPageProps> = (props) => {
   const router = useRouter();
+  const [activeProj, setActiveProj] = useState<string>('');
+
   useEffect(() => {
     const pathList = router.route.split('/');
     // handle `pathList` like ['', 'project', 'marx']
@@ -74,7 +76,6 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
     }
   }, [router.route]);
 
-  const [activeProj, setActiveProj] = useState<string>('');
   const projectInfoList = useMemo(
     () =>
       projects.map((item) => ({
@@ -89,18 +90,15 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
   }
 
   return (
-    <Layout showFooter={false}>
-      <Head>
-        <title>Roadmap | {WEBSITE_TITLE}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout title={activeProj} showFooter={false}>
       <div
         className={classnames(
-          'flex flex-1 flex-col justify-between',
+          'flex flex-col justify-between px-8',
+          'tablet:px-16',
           'desktop:mx-auto desktop:w-[56rem]'
         )}
       >
-        <article className={'mb-40 flex-1 px-8'}>
+        <article className={'mb-40 flex-1'}>
           <h1 className={classnames('text-2xl', 'tablet:text-4xl')}>项目</h1>
           <h3
             className={classnames(

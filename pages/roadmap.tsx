@@ -66,12 +66,7 @@ const RoadmapPage: React.FC = (props) => {
     },
   ]);
   return (
-    <Layout>
-      <Head>
-        <title>Roadmap | {WEBSITE_TITLE}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <Layout title={'Roadmap'}>
       <div
         className={classnames(
           'px-8',

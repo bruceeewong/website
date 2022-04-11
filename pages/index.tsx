@@ -17,12 +17,7 @@ const Home: NextPage = () => {
     'B-Boy',
   ]);
   return (
-    <Layout>
-      <Head>
-        <title>Home | {WEBSITE_TITLE}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <Layout title={'Home'}>
       <div
         className={classnames(
           'bg relative mt-6 flex flex-1  flex-col bg-cover bg-right px-8',
