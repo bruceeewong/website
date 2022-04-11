@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
-import Head from 'next/head';
-import { WEBSITE_TITLE } from '../constants';
-import Button from '../components/Button';
 import { isNonEmptyArray } from '../ utils/checker';
 import classnames from 'classnames';
 
 const RoadmapPage: React.FC = (props) => {
-  const [myEvents, setMyEvents] = useState([
+  const [myEvents] = useState([
     {
       datetime: '2022-04-01',
       name: 'Master录取-Northeastern University',

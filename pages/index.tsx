@@ -1,9 +1,7 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import { WEBSITE_TITLE } from '../constants';
 import avatarPic from '../public/avatar.png';
 import Typist from 'react-text-typist';
 import classnames from 'classnames';
@@ -47,7 +45,12 @@ const Home: NextPage = () => {
                 95后反内卷独立青年
               </h4>
             </div>
-            <div className={classnames('h-28 w-28', 'tablet:h-48 tablet:w-48')}>
+            <div
+              className={classnames(
+                'h-28 w-28 rounded-full',
+                'tablet:h-48 tablet:w-48'
+              )}
+            >
               <Image
                 src={avatarPic}
                 alt={'avatar'}
