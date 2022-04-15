@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import Layout from '../components/Layout';
 import { isNonEmptyArray } from '../ utils/checker';
 import classnames from 'classnames';
+import Badge from "../components/Badge";
+
+const TAG_BADGE_STYLE = new Map([
+  ['academy', '!bg-green-500'],
+  ['career', '!bg-amber-500'],
+])
+
+const TYPE_POINT_STYLE = new Map([
+  ['normal', '!bg-slate-400'],
+  ['milestone', '!bg-sky-500'],
+])
 
 const RoadmapPage: React.FC = (props) => {
   const [myEvents] = useState([
@@ -9,56 +20,56 @@ const RoadmapPage: React.FC = (props) => {
       datetime: '2022-04-01',
       name: 'Master录取-Northeastern University',
       tags: ['academy'],
-      type: 'normal',
+      type: 'milestone',
       desc: 'Electronic and Computer Engineering / Computer Network and Security',
     },
     {
       datetime: '2021-12',
       name: 'PeninCrypto成立',
       tags: ['career'],
-      type: 'normal',
+      type: 'milestone',
       desc: 'ALL IN WEB3, LFG!',
     },
     {
       datetime: '2021-03-07',
-      name: '离职-腾讯音乐',
+      name: '离职-腾讯音乐（深圳）',
       tags: ['career'],
-      type: 'normal',
+      type: 'milestone',
       desc: '反内卷第一步！申请了美国的master，休养报警的身体，想要work-life balance，想all in web3',
     },
     {
       datetime: '2020-10',
-      name: '入职-腾讯音乐',
+      name: '入职-腾讯音乐（深圳）',
       tags: ['career'],
-      type: 'normal',
+      type: 'milestone',
       desc: 'Web前端开发工程师',
     },
     {
       datetime: '2020-08',
       name: '获腾讯智慧零售比赛三等奖',
       tags: ['career'],
-      type: 'milestone',
+      type: 'normal',
       desc: '《Marx火星移民计划》',
     },
     {
-      datetime: '2019-09',
+      datetime: '2019/09',
       name: '获华中科技大学校级优秀毕业设计',
-      tags: ['career'],
-      type: 'milestone',
+      tags: ['academy'],
+      type: 'normal',
       desc: '《漫游华科》',
     },
     {
-      datetime: '2019-07',
-      name: '入职-腾讯',
+      datetime: '2019/07',
+      name: '入职-腾讯（深圳）',
       tags: ['career'],
-      type: 'normal',
+      type: 'milestone',
       desc: '技术工程事业群/运营开发',
     },
     {
-      datetime: '2019.06',
+      datetime: '2019/06',
       name: '本科毕业-华中科技大学',
       tags: ['academy'],
-      type: 'normal',
+      type: 'milestone',
       desc: '软件学院/数字媒体技术',
     },
   ]);
@@ -71,7 +82,7 @@ const RoadmapPage: React.FC = (props) => {
           'desktop:mx-auto desktop:w-[56rem]'
         )}
       >
-        <h1 className={classnames('text-2xl', 'tablet:text-4xl')}>人生路线</h1>
+        <h1 className={classnames('text-2xl', 'tablet:text-4xl')}>个人履历</h1>
         {/*<section className={'scroll-view-x mt-4 flex'}>*/}
         {/*  <Button size={'small'}>全部</Button>*/}
         {/*  <Button size={'small'}>学业</Button>*/}
@@ -97,7 +108,8 @@ const RoadmapPage: React.FC = (props) => {
                 <div
                   className={classnames(
                     'absolute top-8 z-10 h-5 w-5 rounded-full border-2 bg-sky-500',
-                    'tablet:h-8 tablet:w-8 tablet:border-4'
+                    'tablet:h-8 tablet:w-8 tablet:border-4',
+                    TYPE_POINT_STYLE.get(e.type)
                   )}
                 />
               </div>
@@ -119,17 +131,19 @@ const RoadmapPage: React.FC = (props) => {
                   {e.name}
                 </h3>
                 {isNonEmptyArray(e.tags) ? (
-                  <div className={'flex items-center'}>
+                  <div className={'mt-1 flex items-center'}>
                     {e.tags.map((tag) => (
-                      <span
+                      <Badge
                         className={classnames(
-                          'mr-2 text-sm text-slate-500',
-                          'tablet:text-lg'
+                          'mr-2',
+                          'tablet:text-lg',
+                          TAG_BADGE_STYLE.get(tag),
                         )}
                         key={tag}
+                        size={'small'}
                       >
-                        #{tag}
-                      </span>
+                        {tag}
+                      </Badge>
                     ))}
                   </div>
                 ) : null}

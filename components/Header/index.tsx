@@ -1,16 +1,17 @@
-import { IoMenu, IoClose } from 'react-icons/io5';
-import React, { useState } from 'react';
-import { StyleProps } from '../../types/styles';
+import {IoMenu, IoClose} from 'react-icons/io5';
+import React, {useState} from 'react';
+import {StyleProps} from '../../types/styles';
 import classnames from 'classnames';
 import Link from 'next/link';
 import Menu from '../Menu';
-import { useBreakpoint } from '../../ utils/breakpoint';
+import {useBreakpoint} from '../../ utils/breakpoint';
+import Badge from "../Badge";
 
 export type HeaderProps = StyleProps;
 
 const Header: React.FC<HeaderProps> = (props) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const { isBreakpoint } = useBreakpoint();
+  const {isBreakpoint} = useBreakpoint();
 
   return (
     <header
@@ -19,14 +20,14 @@ const Header: React.FC<HeaderProps> = (props) => {
         'glassmorphism flex w-full justify-between bg-white bg-opacity-70 align-middle'
       )}
     >
-      <div
+      <Badge
+        type={'primary'}
         className={classnames(
-          'text-md flex items-center justify-center rounded-md bg-sky-500  px-2 font-bold text-white',
           'tablet:text-2xl'
         )}
       >
         <Link href={'/'}>BRUSKI</Link>
-      </div>
+      </Badge>
       {isBreakpoint(['mobile', 'tablet']) ? (
         <div className={classnames('text-3xl', 'tablet:text-4xl')}>
           {showMenu ? (

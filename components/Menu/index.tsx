@@ -26,7 +26,7 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
       home: '首页',
       blog: '博客',
       project: '项目',
-      roadmap: '人生路线',
+      roadmap: '个人履历',
       // nft_gallery: 'NFT藏品',
     };
     return map[key] || '';
