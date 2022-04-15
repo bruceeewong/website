@@ -8,6 +8,7 @@ export type BadgeSize = 'small' | 'medium';
 export type BadgeProps = StyleProps & {
   type?: BadgeType;
   size?: BadgeSize;
+  onClick?: () => void;
 }
 
 const Badge: React.FC<BadgeProps> = (props) => {
@@ -18,6 +19,7 @@ const Badge: React.FC<BadgeProps> = (props) => {
       [styles.badgeSmall]: size === 'small',
     })}
          style={props.style}
+         onClick={props.onClick}
     >
       {props.children}
     </div>

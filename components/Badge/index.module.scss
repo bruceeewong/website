@@ -1,14 +1,14 @@
 .badge {
-  @apply flex justify-center items-center font-bold;
+  @apply flex justify-center items-center;
   @apply rounded-md px-2;
-  @apply bg-slate-500 text-slate-50;
+  @apply bg-slate-300 text-slate-50;
 
   &Primary {
     @apply bg-sky-500 text-slate-50;
   }
 
   &Small {
-    @apply rounded-sm px-1 font-medium;
-    @apply text-sm;
+    @apply rounded-sm px-1 font-medium text-sm;
+    @apply tablet:rounded-md tablet:px-2 tablet:text-lg;
   }
 }

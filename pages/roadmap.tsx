@@ -14,6 +14,14 @@ const TYPE_POINT_STYLE = new Map([
   ['milestone', '!bg-sky-500'],
 ])
 
+type MyTag = 'all' | 'academy' | 'career'
+
+const filterOptions: {key: MyTag, label: string}[] = [
+  { key: 'all', label: '全部' },
+  { key: 'career', label: '职业' },
+  { key: 'academy', label: '学业' },
+]
+
 const RoadmapPage: React.FC = (props) => {
   const [myEvents] = useState([
     {
@@ -73,6 +81,7 @@ const RoadmapPage: React.FC = (props) => {
       desc: '软件学院/数字媒体技术',
     },
   ]);
+  const [filterTag, setFilterTag] = useState<MyTag>('all');
   return (
     <Layout title={'Roadmap'}>
       <div
@@ -83,15 +92,20 @@ const RoadmapPage: React.FC = (props) => {
         )}
       >
         <h1 className={classnames('text-2xl', 'tablet:text-4xl')}>个人履历</h1>
-        {/*<section className={'scroll-view-x mt-4 flex'}>*/}
-        {/*  <Button size={'small'}>全部</Button>*/}
-        {/*  <Button size={'small'}>学业</Button>*/}
-        {/*  <Button size={'small'}>职业</Button>*/}
-        {/*  <Button size={'small'}>规划</Button>*/}
-        {/*  <Button size={'small'}>里程碑</Button>*/}
-        {/*</section>*/}
-        <section className={'py-8'}>
-          {myEvents.map((e) => (
+        <section className={classnames('scroll-view-x mt-4 flex', 'tablet:mt-6')}>
+          {filterOptions.map(option => (
+            <Badge className={'mr-3 cursor-pointer'} key={option.key}
+              type={option.key === filterTag ? 'primary' : 'default'}
+                   size={'small'}
+                   onClick={() => {setFilterTag(option.key)}}
+            >{option.label}</Badge>
+          ))}
+        </section>
+        <section className={'py-6'}>
+          {myEvents.filter(e => {
+            if (filterTag === 'all') return true;
+            return e.tags.includes(filterTag);
+          }).map((e) => (
             <div className={'flex'} key={e.name}>
               <div
                 className={classnames(

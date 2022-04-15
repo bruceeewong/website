@@ -25,12 +25,12 @@ const Home: NextPage = () => {
         <div className={classnames('desktop:mx-auto desktop:w-[56rem]')}>
           <section className={classnames('flex justify-between')}>
             <div>
-              <h1 className={classnames('text-3xl', 'tablet:text-6xl')}>
+              <h1 className={classnames('text-slate-900 text-3xl', 'tablet:text-6xl')}>
                 你好，
               </h1>
               <h1
                 className={classnames(
-                  'mt-1 text-3xl',
+                  'mt-1 text-3xl text-slate-900',
                   'tablet:mt-3 tablet:text-6xl'
                 )}
               >
@@ -38,8 +38,8 @@ const Home: NextPage = () => {
               </h1>
               <h4
                 className={classnames(
-                  'text-md mt-1',
-                  'tablet:mt-3 tablet:text-3xl'
+                  'text-md mt-1 text-slate-900',
+                  'tablet:mt-4 tablet:text-2xl'
                 )}
               >
                 95后反内卷独立青年
@@ -60,11 +60,11 @@ const Home: NextPage = () => {
           </section>
           <section
             className={classnames(
-              'mt-2 flex text-xl',
-              'tablet:mt-4 tablet:text-4xl'
+              'mt-3 flex text-xl',
+              'tablet:mt-6 tablet:text-3xl'
             )}
           >
-            <span className={'mr-1'}>我是一位</span>
+            <span className={'mr-1 text-slate-900'}>我是一位</span>
             <Typist
               sentences={personalTags}
               loop={true}
@@ -76,6 +76,15 @@ const Home: NextPage = () => {
                 WebkitTextFillColor: 'transparent',
               }}
             />
+          </section>
+
+          <section
+            className={classnames(
+              'mt-3 flex text-xl',
+              'tablet:mt-6 tablet:text-3xl'
+            )}
+          >
+            现就读于 @Northeastern University
           </section>
         </div>
       </div>

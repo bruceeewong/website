@@ -14,7 +14,7 @@ const Footer: React.FC<StyleProps> = ({ className }) => {
     },
     {
       name: 'mail',
-      url: 'mailto:size4real@gmail.com',
+      url: 'mailto:sizhe4real@gmail.com',
       icon: IoMail,
     },
     {

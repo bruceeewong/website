@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = (props) => {
       <Badge
         type={'primary'}
         className={classnames(
-          'tablet:text-2xl'
+          'tablet:text-2xl font-bold'
         )}
       >
         <Link href={'/'}>BRUSKI</Link>
