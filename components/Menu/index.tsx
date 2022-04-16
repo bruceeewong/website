@@ -13,7 +13,7 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
   const { pathname } = useRouter();
   const [links] = useState([
     { key: 'home', path: '/' },
-    { key: 'blog', path: 'https://www.bruski.wang/' },
+    { key: 'blog', path: 'https://blog.bruski.wang/' },
     {
       key: 'project',
       path: isNonEmptyArray(projects) ? `/project/${projects[0].name}` : '/',
