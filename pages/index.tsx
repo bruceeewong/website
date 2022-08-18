@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Layout from '../components/Layout';
 import Image from 'next/image';
 import avatarPic from '../public/avatar.png';
@@ -18,13 +18,16 @@ const Home: NextPage = () => {
     console.log('i18n', i18n.language);
   }, [locale, i18n]);
 
-  const [personalTags] = useState<string[]>([
-    t('fullstack'),
-    t('indeDev'),
-    t('web3Buidler'),
-    t('skater'),
-    t('bboy'),
-  ]);
+  const personalTags = useMemo(
+    () => [
+      t('fullstack'),
+      t('indeDev'),
+      t('web3Buidler'),
+      t('skater'),
+      t('bboy'),
+    ],
+    [i18n.language]
+  );
   return (
     <Layout title={'Home'}>
       <div
