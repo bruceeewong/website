@@ -1,17 +1,17 @@
-import {IoMenu, IoClose} from 'react-icons/io5';
-import React, {useState} from 'react';
-import {StyleProps} from '../../types/styles';
+import { IoMenu, IoClose } from 'react-icons/io5';
+import React, { useState } from 'react';
+import { StyleProps } from '../../types/styles';
 import classnames from 'classnames';
 import Link from 'next/link';
 import Menu from '../Menu';
-import {useBreakpoint} from '../../ utils/breakpoint';
-import Badge from "../Badge";
+import { useBreakpoint } from '../../ utils/breakpoint';
+import Badge from '../Badge';
 
 export type HeaderProps = StyleProps;
 
 const Header: React.FC<HeaderProps> = (props) => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const {isBreakpoint} = useBreakpoint();
+  const { isBreakpoint } = useBreakpoint();
 
   return (
     <header
@@ -22,9 +22,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     >
       <Badge
         type={'primary'}
-        className={classnames(
-          'tablet:text-2xl font-bold'
-        )}
+        className={classnames('font-bold tablet:text-2xl')}
       >
         <Link href={'/'}>BRUSKI</Link>
       </Badge>

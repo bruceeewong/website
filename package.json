@@ -7,6 +7,7 @@
     "build": "next build && next export -o ./build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "prepare": "husky install",
     "test": "jest --passWithNoTests",
     "commit": "cz"
