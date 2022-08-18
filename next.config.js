@@ -16,11 +16,6 @@ const nextConfig = {
     path: '',
   },
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  i18n: {
-    locales: ['en', 'zh'],
-    defaultLocale: 'en',
-    localeDetection: true,
-  },
 };
 
 module.exports = withMDX(nextConfig);

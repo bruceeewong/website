@@ -1,0 +1,14 @@
+.i18n-switch {
+  @apply cursor-pointer rounded-full p-1;
+  font-size: 18px;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+
+  &:hover {
+    background-color: #0ea5e9;
+    transition: all 0.25s;
+    color: #fff;
+  }
+}
