@@ -6,11 +6,14 @@ import { projects } from '../../constants/projects';
 import { isNonEmptyArray } from '../../ utils/checker';
 import { useBreakpoint } from '../../ utils/breakpoint';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 const Menu: React.FC<StyleProps> = ({ className }) => {
   const { isBreakpoint } = useBreakpoint();
   const [activeItem, setActiveItem] = useState('/');
   const { pathname } = useRouter();
+  const { t } = useTranslation('menu');
+
   const [links] = useState([
     { key: 'home', path: '/' },
     { key: 'blog', path: 'https://blog.bruski.wang/' },
@@ -19,15 +22,13 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
       path: isNonEmptyArray(projects) ? `/project/${projects[0].name}` : '/',
     },
     { key: 'roadmap', path: '/roadmap' },
-    // { key: 'nft_gallery', path: '/nft_gallery' },
   ]);
   function menuName(key: string): string {
     const map: Record<string, string> = {
-      home: '首页',
-      blog: '博客',
-      project: '项目',
-      roadmap: '个人履历',
-      // nft_gallery: 'NFT藏品',
+      home: t('home'),
+      blog: t('blog'),
+      project: t('project'),
+      roadmap: t('roadmap'),
     };
     return map[key] || '';
   }

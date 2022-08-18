@@ -1,18 +1,29 @@
 import type { NextPage } from 'next';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Image from 'next/image';
 import avatarPic from '../public/avatar.png';
 import Typist from 'react-text-typist';
 import classnames from 'classnames';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 const Home: NextPage = () => {
+  const { locale } = useRouter();
+  const { t, i18n } = useTranslation('home');
+
+  useEffect(() => {
+    console.log('locale', locale);
+    console.log('heroTitle', t('heroTitle'));
+    console.log('i18n', i18n.language);
+  }, [locale, i18n]);
+
   const [personalTags] = useState<string[]>([
-    '全栈工程师',
-    '独立工作者',
-    'WEB3 BUIDLER',
-    '滑板仔',
-    'B-Boy',
+    t('fullstack'),
+    t('indeDev'),
+    t('web3Buidler'),
+    t('skater'),
+    t('bboy'),
   ]);
   return (
     <Layout title={'Home'}>
@@ -25,8 +36,13 @@ const Home: NextPage = () => {
         <div className={classnames('desktop:mx-auto desktop:w-[56rem]')}>
           <section className={classnames('flex justify-between')}>
             <div>
-              <h1 className={classnames('text-slate-900 text-3xl', 'tablet:text-6xl')}>
-                你好，
+              <h1
+                className={classnames(
+                  'text-3xl text-slate-900',
+                  'tablet:text-6xl'
+                )}
+              >
+                {t('hello')}
               </h1>
               <h1
                 className={classnames(
@@ -34,7 +50,7 @@ const Home: NextPage = () => {
                   'tablet:mt-3 tablet:text-6xl'
                 )}
               >
-                我叫王思哲
+                {t('intro')}
               </h1>
               <h4
                 className={classnames(
@@ -42,7 +58,7 @@ const Home: NextPage = () => {
                   'tablet:mt-4 tablet:text-2xl'
                 )}
               >
-                95后反内卷独立青年
+                {t('headTitle')}
               </h4>
             </div>
             <div
@@ -64,7 +80,7 @@ const Home: NextPage = () => {
               'tablet:mt-6 tablet:text-3xl'
             )}
           >
-            <span className={'mr-1 text-slate-900'}>我是一位</span>
+            <span className={'mr-2 text-slate-900'}>{t('Iam')}</span>
             <Typist
               sentences={personalTags}
               loop={true}
@@ -84,7 +100,7 @@ const Home: NextPage = () => {
               'tablet:mt-6 tablet:text-3xl'
             )}
           >
-            现就读于 @Northeastern University
+            {t('studyAt')}
           </section>
         </div>
       </div>

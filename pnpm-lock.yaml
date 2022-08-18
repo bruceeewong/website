@@ -20,6 +20,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.0.0
   husky: ^7.0.4
+  i18next: ^21.9.1
   install: ^0.13.0
   jest: ^27.5.1
   lint-staged: ^12.3.7
@@ -29,6 +30,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.1.1
   react: 17.0.2
   react-dom: 17.0.2
+  react-i18next: ^11.18.4
   react-icons: ^4.3.1
   react-text-typist: ^1.0.9
   sass: ^1.49.9
@@ -41,10 +43,12 @@ dependencies:
   '@next/mdx': 12.1.0_957e1d0f71fa372e7df9140a34b2aa4c
   antd: 4.19.2_react-dom@17.0.2+react@17.0.2
   classnames: 2.3.1
+  i18next: 21.9.1
   install: 0.13.0
   next: 12.1.0_770cdee6eac9f5b17619eec686780a53
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-i18next: 11.18.4_88d883db49c600f30bf613aaa0f19a5d
   react-icons: 4.3.1_react@17.0.2
   react-text-typist: 1.0.9_react-dom@17.0.2+react@17.0.2
 
@@ -3399,6 +3403,12 @@ packages:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
     dev: true
 
+  /html-parse-stringify/3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+    dev: false
+
   /http-proxy-agent/4.0.1:
     resolution: {integrity: sha512-k0zdNgqWTGA6aeIRVpvfVob4fL52dTfaehylg0Y4UvSySvOq/Y+BOyPrgpUrA7HylqvU8vIZGsRuXmspskV0Tg==}
     engines: {node: '>= 6'}
@@ -3430,6 +3440,12 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
     dev: true
+
+  /i18next/21.9.1:
+    resolution: {integrity: sha512-ITbDrAjbRR73spZAiu6+ex5WNlHRr1mY+acDi2ioTHuUiviJqSz269Le1xHAf0QaQ6GgIHResUhQNcxGwa/PhA==}
+    dependencies:
+      '@babel/runtime': 7.17.8
+    dev: false
 
   /iconv-lite/0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -6090,6 +6106,26 @@ packages:
       scheduler: 0.20.2
     dev: false
 
+  /react-i18next/11.18.4_88d883db49c600f30bf613aaa0f19a5d:
+    resolution: {integrity: sha512-gK/AylAQC5DvCD5YLNCHW4PNzpCfrWIyVAXbSMl+/5QXzlDP8VdBoqE2s2niGHB+zIXwBV9hRXbDrVuupbgHcg==}
+    peerDependencies:
+      i18next: '>= 19.0.0'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.17.8
+      html-parse-stringify: 3.0.1
+      i18next: 21.9.1
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /react-icons/4.3.1_react@17.0.2:
     resolution: {integrity: sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==}
     peerDependencies:
@@ -7152,6 +7188,11 @@ packages:
       is-buffer: 2.0.5
       unist-util-stringify-position: 3.0.2
       vfile-message: 3.1.2
+    dev: false
+
+  /void-elements/3.1.0:
+    resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
+    engines: {node: '>=0.10.0'}
     dev: false
 
   /w3c-hr-time/1.0.2:
