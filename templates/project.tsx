@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { StyleProps } from '../types/styles';
 import { useRouter } from 'next/router';
 import { isNonEmptyArray } from '../ utils/checker';
-import { projectIndex } from '../pages/project/project-index';
+import { projectIndex } from '../constants/project-index';
 import Image from 'next/image';
 import styles from './project.module.scss';
 import { Stack, Chip } from '@mui/material';

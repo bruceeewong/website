@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { StyleProps } from '../../types/styles';
 import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { projectIndex } from '../../pages/project/project-index';
+import { projectIndex } from '../../constants/project-index';
 import { isNonEmptyArray } from '../../ utils/checker';
 import { useBreakpoint } from '../../ utils/breakpoint';
 import { useRouter } from 'next/router';
