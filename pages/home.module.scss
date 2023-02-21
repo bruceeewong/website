@@ -1,0 +1,10 @@
+.bg {
+  background-image: url('/layered-waves-haikei@23.svg');
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+@media (min-width: 1280px) {
+  .bg {
+    background-image: url('/layered-waves-haikei@169.svg');
+  }
+}

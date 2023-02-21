@@ -7,6 +7,7 @@ import Typist from 'react-text-typist';
 import classnames from 'classnames';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
+import styles from './home.module.scss';
 
 const Home: NextPage = () => {
   const { locale } = useRouter();
@@ -32,7 +33,8 @@ const Home: NextPage = () => {
     <Layout title={'Home'}>
       <div
         className={classnames(
-          'bg relative mt-6 flex flex-1  flex-col bg-cover bg-right px-8',
+          styles['bg'],
+          'relative mt-6 flex flex-1  flex-col bg-cover bg-right px-8',
           'tablet:px-16'
         )}
       >
@@ -107,19 +109,6 @@ const Home: NextPage = () => {
           </section>
         </div>
       </div>
-
-      <style jsx>{`
-        .bg {
-          background-image: url('/layered-waves-haikei@23.svg');
-          background-repeat: no-repeat;
-          background-position-y: bottom;
-        }
-        @media (min-width: 1280px) {
-          .bg {
-            background-image: url('/layered-waves-haikei@169.svg');
-          }
-        }
-      `}</style>
     </Layout>
   );
 };

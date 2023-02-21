@@ -7,6 +7,7 @@ import { isNonEmptyArray } from '../../ utils/checker';
 import { useBreakpoint } from '../../ utils/breakpoint';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
+import styles from './index.module.scss';
 
 const Menu: React.FC<StyleProps> = ({ className }) => {
   const { isBreakpoint } = useBreakpoint();
@@ -60,11 +61,12 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
             <Link href={link.path}>
               <a
                 className={classnames(
-                  'link block border-b-2 py-3 text-lg',
+                  styles['link'],
+                  'block border-b-2 py-3 text-lg',
                   'tablet:py-6 tablet:text-2xl',
                   'desktop:hover: desktop:border-0 desktop:py-0',
                   {
-                    'link--active': activeItem === link.key,
+                    [styles['link--active']]: activeItem === link.key,
                   }
                 )}
               >
@@ -74,32 +76,6 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
           </li>
         ))}
       </ul>
-
-      <style jsx>{`
-        .link {
-          position: relative;
-          transition: color 0.3s;
-        }
-        .link:hover {
-          color: #0ea5e9;
-        }
-        .link--active {
-          color: #0ea5e9;
-        }
-
-        @media (min-width: 1280px) {
-          .link:hover:after,
-          .link--active:after {
-            content: '';
-            opacity: 1;
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: #0ea5e9;
-          }
-        }
-      `}</style>
     </nav>
   );
 
