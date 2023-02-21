@@ -9,8 +9,7 @@ import { projectIndex } from '../constants/project-index';
 import Image from 'next/image';
 import styles from './project.module.scss';
 import { Stack, Chip } from '@mui/material';
-import IconHome from '@mui/icons-material/Home';
-import IconGithub from '@mui/icons-material/Github';
+import { Home as IconHome, GitHub as IconGithub } from '@mui/icons-material';
 export type ProjectPageProps = {
   meta: Record<string, any>;
 };
