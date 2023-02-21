@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import '../components/MdxComponents/markdown-style.css';
+import '../styles/gh-md-style.css';
 import type { AppProps } from 'next/app';
 import '../i18n';
 import { useRouter } from 'next/router';

@@ -1,13 +1,16 @@
 import Layout from '../components/Layout';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { ReactElement, useEffect, useMemo, useState } from 'react';
 import classnames from 'classnames';
 import { MDXProvider } from '@mdx-js/react';
-import { components } from '../components/MdxComponents';
 import { StyleProps } from '../types/styles';
 import { useRouter } from 'next/router';
 import { isNonEmptyArray } from '../ utils/checker';
-import { projects } from '../constants/projects';
-
+import { projectIndex } from '../pages/project/project-index';
+import Image from 'next/image';
+import styles from './project.module.scss';
+import { Stack, Chip } from '@mui/material';
+import IconHome from '@mui/icons-material/Home';
+import IconGithub from '@mui/icons-material/Github';
 export type ProjectPageProps = {
   meta: Record<string, any>;
 };
@@ -38,7 +41,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           <div
             key={item.name}
             className={classnames(
-              'mr-4 w-28 flex-shrink-0 cursor-pointer gap-4 rounded-lg bg-white px-4 py-2 shadow',
+              'mr-4 min-w-[28px] flex-shrink-0 cursor-pointer gap-4 rounded-lg bg-white px-4 py-2 shadow',
               {
                 '!bg-sky-500 text-white': props.activeItemName === item.name,
               }
@@ -58,6 +61,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
 
 function projectName(key: string) {
   const map: Record<string, string> = {
+    suiet_wallet: 'Suiet Wallet',
     marx: 'Marx',
     roam_in_hust: '漫游华科',
   };
@@ -67,6 +71,7 @@ function projectName(key: string) {
 const ProjectPage: React.FC<ProjectPageProps> = (props) => {
   const router = useRouter();
   const [activeProj, setActiveProj] = useState<string>('');
+  const meta = useMemo(() => props.meta, [props.meta]);
 
   useEffect(() => {
     const pathList = router.route.split('/');
@@ -78,7 +83,7 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
 
   const projectInfoList = useMemo(
     () =>
-      projects.map((item) => ({
+      projectIndex.map((item) => ({
         name: item.name,
         label: projectName(item.name),
       })),
@@ -87,6 +92,54 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
 
   async function handleRouteTo(projName: string) {
     await router.push(`/project/${projName}`);
+  }
+
+  function coverImage() {
+    if (!meta.cover_image) return null;
+    return (
+      <section className={styles['cover-image']}>
+        <Image
+          src={meta.cover_image}
+          layout={'fill'}
+          alt={'cover image'}
+        ></Image>
+      </section>
+    );
+  }
+
+  function linkIcon(name: string) {
+    const supported: Record<string, ReactElement> = {
+      home: <IconHome />,
+      github: <IconGithub />,
+    };
+    return supported[name];
+  }
+
+  function links() {
+    if (!meta.links) return null;
+    const keys = Object.keys(meta.links);
+    return (
+      <Stack direction="row" spacing={1} className={'my-1.5'}>
+        {keys.map((key) => (
+          <Chip
+            key={key}
+            label={key}
+            icon={linkIcon(key)}
+            component="a"
+            href={meta.links[key]}
+            target={'__blank'}
+            variant="outlined"
+            clickable={true}
+            size={'small'}
+          ></Chip>
+        ))}
+      </Stack>
+    );
+  }
+
+  function description() {
+    if (!meta.desc) return null;
+    return <p className={'text-slate-500'}>{meta.desc}</p>;
   }
 
   return (
@@ -99,21 +152,31 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
         )}
       >
         <article className={'mb-40 flex-1'}>
-          <h1 className={classnames('text-2xl', 'tablet:text-4xl')}>项目</h1>
-          <h3
-            className={classnames(
-              'text-overflow-ellipsis mt-2 text-lg',
-              'tablet:text-2xl'
-            )}
-          >
-            {props.meta.title}
-          </h3>
-          <small className={classnames('text-sm', 'tablet:text-lg')}>
-            {props.meta.datetime}
-          </small>
-          <hr className={'my-2'} />
-          <div className={'mt-4'}>
-            <MDXProvider components={components}>{props.children}</MDXProvider>
+          {coverImage()}
+          <section className={'mt-4 mb-6'}>
+            <div className={'flex items-center justify-between'}>
+              <h3
+                className={classnames(
+                  'text-overflow-ellipsis text-xl',
+                  'tablet:text-2xl'
+                )}
+              >
+                {meta.title}
+              </h3>{' '}
+              <small
+                className={classnames(
+                  'text-sm text-slate-500',
+                  'tablet:text-lg'
+                )}
+              >
+                {meta.datetime}
+              </small>
+            </div>
+            {links()}
+            {description()}
+          </section>
+          <div className={classnames('markdown-body', 'mt-4')}>
+            <MDXProvider>{props.children}</MDXProvider>
           </div>
         </article>
       </div>

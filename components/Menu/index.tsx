@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { StyleProps } from '../../types/styles';
 import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
-import { projects } from '../../constants/projects';
+import { projectIndex } from '../../pages/project/project-index';
 import { isNonEmptyArray } from '../../ utils/checker';
 import { useBreakpoint } from '../../ utils/breakpoint';
 import { useRouter } from 'next/router';
@@ -19,7 +19,9 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
     { key: 'blog', path: 'https://blog.bruski.wang/' },
     {
       key: 'project',
-      path: isNonEmptyArray(projects) ? `/project/${projects[0].name}` : '/',
+      path: isNonEmptyArray(projectIndex)
+        ? `/project/${projectIndex[0].name}`
+        : '/',
     },
     { key: 'roadmap', path: '/roadmap' },
   ]);

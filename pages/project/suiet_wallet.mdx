@@ -1,0 +1,18 @@
+import ProjectPage from "../../templates/project";
+export const meta = {
+  title: 'Suiet Wallet, A Top-tier Crypto Wallet on Sui Blockchain',
+  desc: 'A crypto wallet (Chrome extension using React.js) for everyone on Sui, used and loved by over 200,000 global users',
+  datetime: '2020-06~2020-08',
+  cover_image: 'https://static.bruski.wang/picgo/20230220220729-88d19717414e778d093e57f73f0afc93.jpeg',
+  links: {
+    'home': 'https://suiet.app/',
+    'github': 'https://github.com/suiet/suiet',
+  }
+}
+
+## Contributions
+- Designed the frontend architecture of the wallet including UI, routes, global states, a messaging mechanism between pop windows and the background service worker, and a wallet connection flow with decentralized apps
+- Implemented the wallet standard protocol of Sui using TypeScript and participated in the proposal drafts on GitHub
+- Maintained a React library of wallet kit providing out-of-box UI components and handy hooks for developers to integrate with wallets, which was used by 38 public projects, and reached 69 stars and 1000+ weekly npm downloads
+
+export default ({ children } ) => <ProjectPage meta={meta}>{children}</ProjectPage>
