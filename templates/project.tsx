@@ -101,6 +101,7 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
           src={meta.cover_image}
           layout={'fill'}
           alt={'cover image'}
+          className={'object-cover'}
         ></Image>
       </section>
     );
@@ -150,13 +151,18 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
           'desktop:mx-auto desktop:w-[56rem]'
         )}
       >
-        <article className={'mb-40 flex-1'}>
+        <article className={classnames('mb-20 flex-1', 'tablet:mb-40')}>
           {coverImage()}
           <section className={'mt-4 mb-6'}>
-            <div className={'flex items-center justify-between'}>
+            <div
+              className={classnames(
+                '',
+                'tablet:flex tablet:items-center tablet:justify-between'
+              )}
+            >
               <h3
                 className={classnames(
-                  'text-overflow-ellipsis text-xl',
+                  'text-overflow-ellipsis-2 text-xl',
                   'tablet:text-2xl'
                 )}
               >
@@ -181,7 +187,7 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
       </div>
 
       <NavBar
-        className={'fixed bottom-0 z-10'}
+        className={classnames('', 'tablet:fixed tablet:bottom-0 tablet:z-10')}
         items={projectInfoList}
         activeItemName={activeProj}
         onSelect={(name) => handleRouteTo(name)}
