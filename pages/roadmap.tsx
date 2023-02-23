@@ -31,11 +31,11 @@ const RoadmapPage: React.FC = (props) => {
 
   const myEvents = [
     {
-      datetime: '2022-04-01',
-      name: t('220401_neu'),
+      datetime: '2022-09',
+      name: t('2209_neu'),
       tags: ['academy'],
       type: 'milestone',
-      desc: t('220401_neu_desc'),
+      desc: t('2209_neu_desc'),
     },
     {
       datetime: '2021-12',

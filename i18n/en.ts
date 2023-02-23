@@ -22,8 +22,8 @@ export default {
     all: 'All',
     career: 'Career',
     academy: 'Academy',
-    '220401_neu': 'Master-Northeastern University',
-    '220401_neu_desc':
+    '2209_neu': 'Master-Northeastern University',
+    '2209_neu_desc':
       'Electronic and Computer Engineering / Computer Network and Security',
     '2112_penincrypto': 'Founded PeninCrypto',
     '2112_penincrypto_desc': 'ALL IN WEB3, LFG!',
