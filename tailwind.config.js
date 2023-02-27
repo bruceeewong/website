@@ -1,6 +1,7 @@
 const { plugin } = require('next/dist/build/webpack/config/helpers');
 
 module.exports = {
+  important: true, // FIXME: if there is a better way to fix the issue that Next build with tailwind loss
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './templates/**/*.{js,ts,jsx,tsx}',

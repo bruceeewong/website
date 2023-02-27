@@ -24,7 +24,7 @@ export const Contacts = () => {
         />
         <Bubble
           icon={<EmailIcon className={'text-6xl'} />}
-          color={'teal'}
+          color={'red'}
           url={'mailto:sizhe4real@gmail.com'}
         />
         <Bubble
@@ -34,7 +34,7 @@ export const Contacts = () => {
         />
         <Bubble
           icon={<TwitterIcon className={'text-6xl'} />}
-          color={'blue'}
+          color={'sky'}
           url={'https://twitter.com/brrruski'}
         />
       </div>

@@ -30,11 +30,7 @@ const Bubble: FC<BubbleProps> = ({ icon, color, url }) => {
       )}
       onClick={() => {
         if (typeof url !== 'string') return;
-        if (url.startsWith('mailto')) {
-          window.open(url);
-          return;
-        }
-        window.open(url, '_blank');
+        window.open(url);
       }}
     >
       {icon}
