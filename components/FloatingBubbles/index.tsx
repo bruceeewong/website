@@ -1,6 +1,7 @@
-import { FC, RefObject, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { StyleProps } from '../../types/styles';
 import classnames from 'classnames';
+import debounce from 'lodash-es/debounce.js';
 
 class Bubble {
   maxHeight: number;
@@ -53,8 +54,8 @@ class background {
   private ctx: CanvasRenderingContext2D;
   private bubblesList: Bubble[];
 
-  constructor(domRef: HTMLCanvasElement) {
-    this.canvas = domRef;
+  constructor(canvasRef: HTMLCanvasElement) {
+    this.canvas = canvasRef;
     this.ctx = this.canvas.getContext('2d') as CanvasRenderingContext2D;
     this.canvas.height = window.innerHeight;
     this.canvas.width = window.innerWidth;
@@ -98,8 +99,15 @@ class background {
 const FloatingBubbles: FC<StyleProps> = ({ className, children }) => {
   const bgRef = useRef(null);
   useEffect(() => {
-    if (!bgRef.current) return;
-    new background(bgRef.current);
+    const animate = debounce(() => {
+      if (!bgRef.current) return;
+      new background(bgRef.current);
+    }, 500);
+    animate();
+    window.addEventListener('resize', animate);
+    return () => {
+      window.removeEventListener('resize', animate);
+    };
   }, []);
   return (
     <div className={classnames('relative', className)}>

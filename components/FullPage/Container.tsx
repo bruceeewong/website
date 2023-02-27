@@ -1,13 +1,10 @@
 import { StyleProps } from '../../types/styles';
-import styles from './index.module.scss';
 import classnames from 'classnames';
-
 export const Container: React.FC<StyleProps> = (props) => {
   return (
     <div
       className={classnames(
-        'full-page-container',
-        styles.container,
+        'relative mx-auto w-full overflow-y-auto',
         props.className
       )}
       style={props.style}

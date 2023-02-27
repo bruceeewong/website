@@ -12,16 +12,40 @@ export const Skills = () => {
         <SkillCard title={'FrontEnd'} img={'/img/fe-logo.png'}>
           <SkillSection
             title={'Languages'}
-            labels={['HTML', 'CSS', 'JavaScript']}
+            labels={['HTML', 'CSS', 'JavaScript', 'TypeScript']}
           />
           <SkillSection
             title={'Frameworks'}
-            labels={['React.js', 'Vue.js', 'Node.js']}
+            labels={[
+              'React.js',
+              'Vue.js',
+              'Node.js',
+              'Next.js',
+              'Express.js',
+              'GraphQL',
+            ]}
           />
+
           <SkillSection
             title={'Tools'}
-            labels={['Chrome Devtools', 'Webstorm', 'VS Code']}
+            labels={[
+              'Redux',
+              'React Router',
+              'Vuex',
+              'Vue Router',
+              'Jest',
+              'ESLint',
+              'Husky',
+              'LintStage',
+              'Commitizen',
+              'NPM',
+              'Webpack',
+              'Rollup',
+              'Vite',
+              'Postman',
+            ]}
           />
+          <SkillSection title={'IDE'} labels={['Webstorm', 'VS Code']} />
         </SkillCard>
       </div>
     </div>

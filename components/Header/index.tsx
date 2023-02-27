@@ -1,12 +1,11 @@
 import { IoMenu, IoClose } from 'react-icons/io5';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleProps } from '../../types/styles';
 import classnames from 'classnames';
 import Link from 'next/link';
 import Menu from '../Menu';
 import { useBreakpoint } from '../../ utils/breakpoint';
 import Badge from '../Badge';
-import I18nSwitch from '../I18nSwitch';
 import { useTranslation } from 'react-i18next';
 
 export type HeaderProps = StyleProps;
@@ -20,7 +19,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     <header
       className={classnames(
         props.className,
-        'glassmorphism flex w-full justify-between bg-white bg-opacity-70 align-middle'
+        'flex w-full justify-between bg-white align-middle'
       )}
     >
       <Badge
@@ -58,12 +57,12 @@ const Header: React.FC<HeaderProps> = (props) => {
             }
           )}
         />
-        <I18nSwitch
-          className={'ml-2'}
-          onClick={() => {
-            i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en');
-          }}
-        />
+        {/*<I18nSwitch*/}
+        {/*  className={'ml-2'}*/}
+        {/*  onClick={() => {*/}
+        {/*    i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en');*/}
+        {/*  }}*/}
+        {/*/>*/}
       </div>
     </header>
   );

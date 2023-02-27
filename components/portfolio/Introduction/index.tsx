@@ -2,6 +2,7 @@ import React, { useMemo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import ParallaxText from '../../ParallaxText';
 import Typist from '../../../components/Typist';
+import Header from '../../Header';
 
 export const Introduction = () => {
   const { t, i18n } = useTranslation('home');
@@ -16,9 +17,10 @@ export const Introduction = () => {
     <div
       ref={containerRef}
       className={
-        'flex h-full w-full flex-col items-center justify-center overflow-x-hidden p-8'
+        'relative flex h-full w-full flex-col items-center justify-center overflow-x-hidden p-8'
       }
     >
+      <Header className={'absolute top-0 z-10 px-6 py-4'} />
       <div className={'flex w-full flex-col items-center'}>
         <p className={'text-2xl'}>{`Hi, I'm`}</p>
         <h1

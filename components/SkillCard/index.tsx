@@ -40,7 +40,7 @@ const SkillCard: FC<SkillCardProps> = ({ img, title = 'Title', children }) => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.imgBx}>
-          <img src={img} />
+          <img src={img} alt={'skill-image'} />
         </div>
         <div className={classnames(styles.contentBx)}>
           <h2 className={'text-center text-2xl'}>{title}</h2>

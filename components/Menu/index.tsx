@@ -18,13 +18,13 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
   const [links] = useState([
     { key: 'home', path: '/' },
     { key: 'blog', path: 'https://blog.bruski.wang/' },
-    {
-      key: 'project',
-      path: isNonEmptyArray(projectIndex)
-        ? `/project/${projectIndex[0].name}`
-        : '/',
-    },
-    { key: 'roadmap', path: '/roadmap' },
+    // {
+    //   key: 'project',
+    //   path: isNonEmptyArray(projectIndex)
+    //     ? `/project/${projectIndex[0].name}`
+    //     : '/',
+    // },
+    // { key: 'roadmap', path: '/roadmap' },
   ]);
   function menuName(key: string): string {
     const map: Record<string, string> = {
@@ -58,20 +58,19 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
             key={link.key}
             className={classnames('px-8', 'tablet:px-16', 'desktop:px-4')}
           >
-            <Link href={link.path}>
-              <a
-                className={classnames(
-                  styles['link'],
-                  'block border-b-2 py-3 text-lg',
-                  'tablet:py-6 tablet:text-2xl',
-                  'desktop:hover: desktop:border-0 desktop:py-0',
-                  {
-                    [styles['link--active']]: activeItem === link.key,
-                  }
-                )}
-              >
-                {menuName(link.key)}
-              </a>
+            <Link
+              href={link.path}
+              className={classnames(
+                styles['link'],
+                'block border-b-2 py-3 text-lg',
+                'tablet:py-6 tablet:text-2xl',
+                'desktop:hover: desktop:border-0 desktop:py-0',
+                {
+                  [styles['link--active']]: activeItem === link.key,
+                }
+              )}
+            >
+              {menuName(link.key)}
             </Link>
           </li>
         ))}
@@ -86,7 +85,7 @@ const Menu: React.FC<StyleProps> = ({ className }) => {
     <div
       className={classnames(
         className,
-        'glassmorphism h-screen w-screen overflow-scroll  bg-white bg-opacity-90'
+        ' h-screen w-screen overflow-scroll bg-white'
       )}
     >
       {Nav}
