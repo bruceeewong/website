@@ -23,10 +23,7 @@ const Home: NextPage = () => {
       <FullPageSection>
         <Introduction />
       </FullPageSection>
-      <FullPageSection style={{ backgroundColor: 'green' }}>
-        <Interests />
-      </FullPageSection>
-      <FullPageSection style={{ backgroundColor: 'blue' }}>
+      <FullPageSection>
         <Skills />
       </FullPageSection>
 
