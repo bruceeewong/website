@@ -20,9 +20,18 @@ export const Introduction = () => {
       }
     >
       <div className={'flex w-full flex-col items-center'}>
-        <p className={'text-xl'}>{`Hi, I'm a`}</p>
-        <h1 className={'mt-1 text-3xl font-bold'}>Bruski Wang</h1>
-        <p className={'mt-10 mb-2 text-2xl '}>a.k.a</p>
+        <p className={'text-2xl'}>{`Hi, I'm`}</p>
+        <h1
+          className={'mt-1 text-4xl font-bold'}
+          style={{
+            background: '-webkit-linear-gradient(0deg, #0ea5e9, #8b5cf6)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Bruski Wang
+        </h1>
+        <p className={'mt-2 mb-2 text-2xl '}>a.k.a</p>
         <Typist
           className={'text-4xl font-bold'}
           sentences={personalTags}
@@ -37,7 +46,7 @@ export const Introduction = () => {
         />
       </div>
 
-      <div className={'mt-20'}>
+      <div className={'mt-32'}>
         <ParallaxText
           baseVelocity={-5}
           scrollClassName={'text-gray-300'}
