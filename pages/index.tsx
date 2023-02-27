@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <Skills />
       </FullPageSection>
 
-      <FullPageSection style={{ backgroundColor: 'yellow' }}>
+      <FullPageSection>
         <Contacts />
       </FullPageSection>
     </FullPageContainer>
