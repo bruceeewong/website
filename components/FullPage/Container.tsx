@@ -3,10 +3,7 @@ import classnames from 'classnames';
 export const Container: React.FC<StyleProps> = (props) => {
   return (
     <div
-      className={classnames(
-        'relative mx-auto w-full overflow-y-auto',
-        props.className
-      )}
+      className={classnames('relative mx-auto w-full', props.className)}
       style={props.style}
     >
       {props.children}

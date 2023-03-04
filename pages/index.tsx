@@ -11,9 +11,9 @@ import Contacts from '../components/portfolio/Contacts';
 const Home: NextPage = () => {
   return (
     <FullPageContainer>
-      <FullPageSection>
-        <Introduction />
-      </FullPageSection>
+      {/*<FullPageSection>*/}
+      {/*  <Introduction />*/}
+      {/*</FullPageSection>*/}
       <FullPageSection>
         <Skills />
       </FullPageSection>

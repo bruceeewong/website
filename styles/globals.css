@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer utilities {
     .page-edge {
         @apply px-8;
@@ -27,11 +28,15 @@
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
     }
-    .hide-scrollbar {
+    .no-scrollbar {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
-    .hide-scrollbar::-webkit-scrollbar {
+    .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }

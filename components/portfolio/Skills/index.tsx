@@ -1,52 +1,44 @@
 import React from 'react';
 import SkillCard, { SkillSection } from '../../SkillCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
+
+import { FrontEndSkillCard } from './FrontEndSkillCard';
+import { EffectCards, Pagination } from 'swiper';
+import { BackEndSkillCard } from './BackEndSkillCard';
+import { NetworkSkillCard } from './NetworkSkillCard';
 
 export const Skills = () => {
   return (
-    <div className={'flex h-full w-full flex-col items-center px-8 pb-24'}>
-      <div className={'mt-8 text-center'}>
+    <div className={'flex flex-col items-center'}>
+      <div className={'mt-12 text-center'}>
         <p className={'text-xl'}>Check out my</p>
         <h1 className={'text-4xl font-bold'}>SKILL SETS</h1>
       </div>
-      <div className={'mt-6'}>
-        <SkillCard title={'FrontEnd'} img={'/img/fe-logo.png'}>
-          <SkillSection
-            title={'Languages'}
-            labels={['HTML', 'CSS', 'JavaScript', 'TypeScript']}
-          />
-          <SkillSection
-            title={'Frameworks'}
-            labels={[
-              'React.js',
-              'Vue.js',
-              'Node.js',
-              'Next.js',
-              'Express.js',
-              'GraphQL',
-            ]}
-          />
-
-          <SkillSection
-            title={'Tools'}
-            labels={[
-              'Redux',
-              'React Router',
-              'Vuex',
-              'Vue Router',
-              'Jest',
-              'ESLint',
-              'Husky',
-              'LintStage',
-              'Commitizen',
-              'NPM',
-              'Webpack',
-              'Rollup',
-              'Vite',
-              'Postman',
-            ]}
-          />
-          <SkillSection title={'IDE'} labels={['Webstorm', 'VS Code']} />
-        </SkillCard>
+      <div className={'mt-12 w-full overflow-hidden'}>
+        <Swiper
+          className={'h-[400px] w-[280px]'}
+          effect={'cards'}
+          grabCursor={true}
+          pagination={{
+            bulletActiveClass: 'bg-white',
+          }}
+          modules={[EffectCards, Pagination]}
+          onSlideChange={() => console.log('slide change')}
+          onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide className={'rounded-3xl'}>
+            <FrontEndSkillCard />
+          </SwiperSlide>
+          <SwiperSlide className={'rounded-3xl'}>
+            <BackEndSkillCard />
+          </SwiperSlide>
+          <SwiperSlide className={'rounded-3xl'}>
+            <NetworkSkillCard />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
