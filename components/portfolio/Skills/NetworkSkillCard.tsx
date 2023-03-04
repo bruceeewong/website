@@ -1,12 +1,13 @@
 import React from 'react';
-import SkillCard, { SkillSection } from '../../SkillCard';
+import SkillCard, { SkillCardProps, SkillSection } from '../../SkillCard';
 
-export const NetworkSkillCard = () => {
+export const NetworkSkillCard = (props: Partial<SkillCardProps>) => {
   return (
     <SkillCard
       title={'Network'}
       img={'/img/fe-logo.png'}
-      className={'bg-green-500'}
+      circleClassName={'bg-blue-500'}
+      shouldReset={props.shouldReset}
     >
       <SkillSection
         title={'Languages'}

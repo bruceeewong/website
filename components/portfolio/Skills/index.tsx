@@ -1,5 +1,4 @@
-import React from 'react';
-import SkillCard, { SkillSection } from '../../SkillCard';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -11,6 +10,7 @@ import { BackEndSkillCard } from './BackEndSkillCard';
 import { NetworkSkillCard } from './NetworkSkillCard';
 
 export const Skills = () => {
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
   return (
     <div className={'flex flex-col items-center'}>
       <div className={'mt-12 text-center'}>
@@ -26,17 +26,18 @@ export const Skills = () => {
             bulletActiveClass: 'bg-white',
           }}
           modules={[EffectCards, Pagination]}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={({ activeIndex }) => {
+            setActiveCardIndex(activeIndex);
+          }}
         >
           <SwiperSlide className={'rounded-3xl'}>
-            <FrontEndSkillCard />
+            <FrontEndSkillCard shouldReset={activeCardIndex !== 0} />
           </SwiperSlide>
           <SwiperSlide className={'rounded-3xl'}>
-            <BackEndSkillCard />
+            <BackEndSkillCard shouldReset={activeCardIndex !== 1} />
           </SwiperSlide>
           <SwiperSlide className={'rounded-3xl'}>
-            <NetworkSkillCard />
+            <NetworkSkillCard shouldReset={activeCardIndex !== 2} />
           </SwiperSlide>
         </Swiper>
       </div>
