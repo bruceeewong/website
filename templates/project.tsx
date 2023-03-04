@@ -8,7 +8,6 @@ import { isNonEmptyArray } from '../ utils/checker';
 import { projectIndex } from '../constants/project-index';
 import Image from 'next/image';
 import styles from './project.module.scss';
-import { Stack, Chip } from '@mui/material';
 import { Home as IconHome, GitHub as IconGithub } from '@mui/icons-material';
 export type ProjectPageProps = {
   meta: Record<string, any>;
@@ -119,21 +118,11 @@ const ProjectPage: React.FC<ProjectPageProps> = (props) => {
     if (!meta.links) return null;
     const keys = Object.keys(meta.links);
     return (
-      <Stack direction="row" spacing={1} className={'my-1.5'}>
+      <div className={'my-1.5'}>
         {keys.map((key) => (
-          <Chip
-            key={key}
-            label={key}
-            icon={linkIcon(key)}
-            component="a"
-            href={meta.links[key]}
-            target={'__blank'}
-            variant="outlined"
-            clickable={true}
-            size={'small'}
-          ></Chip>
+          <span key={key}>{key}</span>
         ))}
-      </Stack>
+      </div>
     );
   }
 

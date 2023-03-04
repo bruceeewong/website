@@ -1,6 +1,5 @@
 import styles from './index.module.scss';
 import { FC, useEffect, useState } from 'react';
-import { Chip } from '@mui/material';
 import classnames from 'classnames';
 import { StyleProps } from '../../types/styles';
 
@@ -23,14 +22,14 @@ export const SkillSection: FC<SkillSectionProps> = ({ title, labels = [] }) => {
       <div className={'mt-1 flex flex-wrap'}>
         {labels.map((label) => {
           return (
-            <Chip
+            <span
               key={label}
-              variant={'filled'}
-              size={'small'}
-              label={label}
-              color={'info'}
-              className={'m-1 bg-zinc-400'}
-            />
+              className={
+                'm-1 rounded-full bg-zinc-400 px-2 py-1 text-xs text-white'
+              }
+            >
+              {label}
+            </span>
           );
         })}
       </div>

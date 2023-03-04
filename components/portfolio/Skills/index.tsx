@@ -8,6 +8,7 @@ import { FrontEndSkillCard } from './FrontEndSkillCard';
 import { EffectCards, Pagination } from 'swiper';
 import { BackEndSkillCard } from './BackEndSkillCard';
 import { NetworkSkillCard } from './NetworkSkillCard';
+import dynamic from 'next/dynamic';
 
 export const Skills = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
