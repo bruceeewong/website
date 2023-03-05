@@ -110,7 +110,7 @@ const FloatingBubbles: FC<StyleProps> = ({ className, children }) => {
     };
   }, []);
   return (
-    <div className={classnames('relative', className)}>
+    <div className={classnames('relative h-full w-full', className)}>
       <canvas
         ref={bgRef}
         className={classnames('absolute z-[-1] h-full w-full')}

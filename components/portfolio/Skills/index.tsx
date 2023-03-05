@@ -13,12 +13,12 @@ import dynamic from 'next/dynamic';
 export const Skills = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
   return (
-    <div className={'flex flex-col items-center'}>
-      <div className={'mt-12 text-center'}>
+    <div className={'flex h-full w-full flex-col items-center justify-center'}>
+      <div className={'text-center'}>
         <p className={'text-xl'}>Check out my</p>
         <h1 className={'text-4xl font-bold'}>SKILL SETS</h1>
       </div>
-      <div className={'mt-12 w-full overflow-hidden'}>
+      <div className={'mt-16 w-full overflow-hidden'}>
         <Swiper
           className={'h-[400px] w-[280px]'}
           effect={'cards'}
