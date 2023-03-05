@@ -9,7 +9,10 @@ export const NetworkSkillCard = (props: Partial<SkillCardProps>) => {
       circleClassName={'bg-purple-500'}
       shouldReset={props.shouldReset}
     >
-      <SkillSection title={'Languages'} labels={['C++', 'Python']} />
+      <SkillSection
+        title={'Languages'}
+        labels={['JavaScript', 'C++', 'Python']}
+      />
       <SkillSection
         title={'Protocols'}
         labels={['HTTP(s)', 'TCP', 'UDP', '802.11', '5G']}
@@ -18,7 +21,9 @@ export const NetworkSkillCard = (props: Partial<SkillCardProps>) => {
         title={'Tools'}
         labels={[
           'Wireshark',
+          'whistle.js',
           'Postman',
+          'CDN',
           'curl',
           'wget',
           'ping',
@@ -26,7 +31,10 @@ export const NetworkSkillCard = (props: Partial<SkillCardProps>) => {
           'trace',
         ]}
       />
-      <SkillSection title={'IDE'} labels={['Clion', 'PyCharm']} />
+      <SkillSection
+        title={'IDE'}
+        labels={['Clion', 'PyCharm', 'WebStorm', 'VS Code']}
+      />
     </SkillCard>
   );
 };

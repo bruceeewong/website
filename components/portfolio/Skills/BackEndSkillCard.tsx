@@ -15,7 +15,7 @@ export const BackEndSkillCard = (props: Partial<SkillCardProps>) => {
       />
       <SkillSection
         title={'Frameworks'}
-        labels={['Flask', 'Express.js', 'Nest.js']}
+        labels={['Flask', 'Express.js', 'Nest.js', 'Spring Boot']}
       />
       <SkillSection
         title={'Tools'}
@@ -25,7 +25,6 @@ export const BackEndSkillCard = (props: Partial<SkillCardProps>) => {
           'Apache',
           'GraphQL',
           'Domains',
-          'CDN',
           'OSS',
           'Cloud VM',
         ]}

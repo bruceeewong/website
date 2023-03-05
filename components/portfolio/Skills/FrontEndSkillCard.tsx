@@ -11,11 +11,18 @@ export const FrontEndSkillCard = (props: Partial<SkillCardProps>) => {
     >
       <SkillSection
         title={'Languages'}
-        labels={['HTML', 'CSS', 'JavaScript', 'TypeScript']}
+        labels={['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Dart']}
       />
       <SkillSection
         title={'Frameworks'}
-        labels={['React.js', 'Vue.js', 'Node.js', 'Next.js', 'GraphQL']}
+        labels={[
+          'React.js',
+          'Vue.js',
+          'Node.js',
+          'Next.js',
+          'React Native',
+          'Flutter',
+        ]}
       />
       <SkillSection
         title={'Tools'}
@@ -24,16 +31,18 @@ export const FrontEndSkillCard = (props: Partial<SkillCardProps>) => {
           'React Router',
           'Vuex',
           'Vue Router',
-          'Jest',
+          'SWR',
+          'React Query',
+          'Apollo GraphQL',
           'ESLint',
-          'Husky',
-          'LintStage',
-          'Commitizen',
+          'Jest',
+          'Enzyme',
+          'React Testing Library',
+          'Storybook',
           'NPM',
           'Webpack',
           'Rollup',
           'Vite',
-          'Postman',
         ]}
       />
       <SkillSection title={'IDE'} labels={['Webstorm', 'VS Code']} />
