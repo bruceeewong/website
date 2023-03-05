@@ -28,10 +28,10 @@ export function ParallaxText({
   scrollClassName,
 }: ParallaxProps) {
   const baseX = useMotionValue(0);
-  // const { scrollY } = useScroll();
-  // const scrollVelocity = useVelocity(scrollY);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
 
-  const smoothVelocity = useSpring(0, {
+  const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
     stiffness: 400,
   });
@@ -54,11 +54,11 @@ export function ParallaxText({
      * This is what changes the direction of the scroll once we
      * switch scrolling directions.
      */
-    // if (velocityFactor.get() < 0) {
-    //   directionFactor.current = -1;
-    // } else if (velocityFactor.get() > 0) {
-    //   directionFactor.current = 1;
-    // }
+    if (velocityFactor.get() < 0) {
+      directionFactor.current = -1;
+    } else if (velocityFactor.get() > 0) {
+      directionFactor.current = 1;
+    }
 
     // moveBy += directionFactor.current * moveBy;
     moveBy += directionFactor.current * moveBy * velocityFactor.get();
