@@ -1,1 +1,1 @@
-export const WEBSITE_TITLE = 'Bruski';
+export const WEBSITE_TITLE = "Bruski's Portfolio";
