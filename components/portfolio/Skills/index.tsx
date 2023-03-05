@@ -9,6 +9,7 @@ import { EffectCards, Pagination } from 'swiper';
 import { BackEndSkillCard } from './BackEndSkillCard';
 import { NetworkSkillCard } from './NetworkSkillCard';
 import dynamic from 'next/dynamic';
+import { DatabaseSkillCard } from './DatabaseSkillCard';
 
 export const Skills = () => {
   const [activeCardIndex, setActiveCardIndex] = useState(0);
@@ -38,7 +39,10 @@ export const Skills = () => {
             <BackEndSkillCard shouldReset={activeCardIndex !== 1} />
           </SwiperSlide>
           <SwiperSlide className={'rounded-3xl'}>
-            <NetworkSkillCard shouldReset={activeCardIndex !== 2} />
+            <DatabaseSkillCard shouldReset={activeCardIndex !== 2} />
+          </SwiperSlide>
+          <SwiperSlide className={'rounded-3xl'}>
+            <NetworkSkillCard shouldReset={activeCardIndex !== 3} />
           </SwiperSlide>
         </Swiper>
       </div>

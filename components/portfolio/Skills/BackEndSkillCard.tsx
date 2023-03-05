@@ -5,7 +5,7 @@ export const BackEndSkillCard = (props: Partial<SkillCardProps>) => {
   return (
     <SkillCard
       title={'BackEnd'}
-      img={'/img/fe-logo.png'}
+      img={'/img/backend--sm.png'}
       circleClassName={'bg-green-500'}
       shouldReset={props.shouldReset}
     >

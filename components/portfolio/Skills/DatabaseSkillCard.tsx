@@ -1,12 +1,12 @@
 import React from 'react';
 import SkillCard, { SkillCardProps, SkillSection } from '../../SkillCard';
 
-export const FrontEndSkillCard = (props: Partial<SkillCardProps>) => {
+export const DatabaseSkillCard = (props: Partial<SkillCardProps>) => {
   return (
     <SkillCard
-      title={'FrontEnd'}
-      img={'/img/frontend--sm.png'}
-      circleClassName={'bg-amber-500'}
+      title={'Database'}
+      img={'/img/database--sm.png'}
+      circleClassName={'bg-stone-500'}
       shouldReset={props.shouldReset}
     >
       <SkillSection

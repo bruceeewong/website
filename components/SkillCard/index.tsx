@@ -2,6 +2,7 @@ import styles from './index.module.scss';
 import { FC, useEffect, useState } from 'react';
 import classnames from 'classnames';
 import { StyleProps } from '../../types/styles';
+import Image from 'next/image';
 
 export type SkillCardProps = StyleProps & {
   img: string;
@@ -67,7 +68,13 @@ const SkillCard: FC<SkillCardProps> = ({
     >
       <div className={classnames(styles.circle, circleClassName)}></div>
       <div className={styles.imgBx}>
-        <img src={img} alt={'skill-image'} />
+        <Image
+          className={styles.img}
+          src={img}
+          fill
+          objectFit={'contain'}
+          alt={'skill-image'}
+        />
       </div>
       <div className={classnames(styles.contentBx)}>
         <h2 className={'text-center text-2xl text-slate-100'}>{title}</h2>

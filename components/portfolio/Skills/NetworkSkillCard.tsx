@@ -5,7 +5,7 @@ export const NetworkSkillCard = (props: Partial<SkillCardProps>) => {
   return (
     <SkillCard
       title={'Network'}
-      img={'/img/fe-logo.png'}
+      img={'/img/network--sm.png'}
       circleClassName={'bg-blue-500'}
       shouldReset={props.shouldReset}
     >
