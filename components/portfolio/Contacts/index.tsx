@@ -15,7 +15,7 @@ export const Contacts = () => {
           <p className={'text-xl'}>Feel free to</p>
           <h1 className={'text-4xl font-bold'}>CONTACT ME</h1>
         </div>
-        <div className={'mt-16 grid grid-cols-2 gap-6'}>
+        <div className={'mt-8 grid grid-cols-2 gap-6'}>
           <Bubble
             icon={<LinkedInIcon className={'text-6xl'} />}
             color={'sky'}

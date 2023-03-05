@@ -4,7 +4,10 @@ import classnames from 'classnames';
 export const Section: React.FC<StyleProps> = (props) => {
   return (
     <section
-      className={classnames('relative h-[100vh] w-full', props.className)}
+      className={classnames(
+        'relative h-[100vh] w-full snap-center',
+        props.className
+      )}
       style={props.style}
     >
       {props.children}

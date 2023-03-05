@@ -5,9 +5,10 @@ import {
   Container as FullPageContainer,
   Section as FullPageSection,
 } from '../components/FullPage';
-import Introduction from '../components/portfolio/Introduction';
 import Head from 'next/head';
 import { WEBSITE_TITLE } from '../constants';
+import Introduction from '../components/portfolio/Introduction';
+
 const Skills = dynamic(() => import('../components/portfolio/Skills'), {
   ssr: false,
 });
