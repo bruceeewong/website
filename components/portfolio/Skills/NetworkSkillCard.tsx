@@ -6,44 +6,27 @@ export const NetworkSkillCard = (props: Partial<SkillCardProps>) => {
     <SkillCard
       title={'Network'}
       img={'/img/network--sm.png'}
-      circleClassName={'bg-blue-500'}
+      circleClassName={'bg-purple-500'}
       shouldReset={props.shouldReset}
     >
+      <SkillSection title={'Languages'} labels={['C++', 'Python']} />
       <SkillSection
-        title={'Languages'}
-        labels={['HTML', 'CSS', 'JavaScript', 'TypeScript']}
-      />
-      <SkillSection
-        title={'Frameworks'}
-        labels={[
-          'React.js',
-          'Vue.js',
-          'Node.js',
-          'Next.js',
-          'Express.js',
-          'GraphQL',
-        ]}
+        title={'Protocols'}
+        labels={['HTTP(s)', 'TCP', 'UDP', '802.11', '5G']}
       />
       <SkillSection
         title={'Tools'}
         labels={[
-          'Redux',
-          'React Router',
-          'Vuex',
-          'Vue Router',
-          'Jest',
-          'ESLint',
-          'Husky',
-          'LintStage',
-          'Commitizen',
-          'NPM',
-          'Webpack',
-          'Rollup',
-          'Vite',
+          'Wireshark',
           'Postman',
+          'curl',
+          'wget',
+          'ping',
+          'telnet',
+          'trace',
         ]}
       />
-      <SkillSection title={'IDE'} labels={['Webstorm', 'VS Code']} />
+      <SkillSection title={'IDE'} labels={['Clion', 'PyCharm']} />
     </SkillCard>
   );
 };

@@ -15,14 +15,7 @@ export const FrontEndSkillCard = (props: Partial<SkillCardProps>) => {
       />
       <SkillSection
         title={'Frameworks'}
-        labels={[
-          'React.js',
-          'Vue.js',
-          'Node.js',
-          'Next.js',
-          'Express.js',
-          'GraphQL',
-        ]}
+        labels={['React.js', 'Vue.js', 'Node.js', 'Next.js', 'GraphQL']}
       />
       <SkillSection
         title={'Tools'}

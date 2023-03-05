@@ -11,39 +11,29 @@ export const BackEndSkillCard = (props: Partial<SkillCardProps>) => {
     >
       <SkillSection
         title={'Languages'}
-        labels={['HTML', 'CSS', 'JavaScript', 'TypeScript']}
+        labels={['Python', 'Node.js', 'Java', 'Shell Scripting']}
       />
       <SkillSection
         title={'Frameworks'}
-        labels={[
-          'React.js',
-          'Vue.js',
-          'Node.js',
-          'Next.js',
-          'Express.js',
-          'GraphQL',
-        ]}
+        labels={['Flask', 'Express.js', 'Nest.js']}
       />
       <SkillSection
         title={'Tools'}
         labels={[
-          'Redux',
-          'React Router',
-          'Vuex',
-          'Vue Router',
-          'Jest',
-          'ESLint',
-          'Husky',
-          'LintStage',
-          'Commitizen',
-          'NPM',
-          'Webpack',
-          'Rollup',
-          'Vite',
-          'Postman',
+          'Docker',
+          'Nginx',
+          'Apache',
+          'GraphQL',
+          'Domains',
+          'CDN',
+          'OSS',
+          'Cloud VM',
         ]}
       />
-      <SkillSection title={'IDE'} labels={['Webstorm', 'VS Code']} />
+      <SkillSection
+        title={'IDE'}
+        labels={['Vim', 'PyCharm', 'VS Code', 'Intellij IDEA']}
+      />
     </SkillCard>
   );
 };

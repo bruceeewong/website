@@ -6,44 +6,19 @@ export const DatabaseSkillCard = (props: Partial<SkillCardProps>) => {
     <SkillCard
       title={'Database'}
       img={'/img/database--sm.png'}
-      circleClassName={'bg-stone-500'}
+      circleClassName={'bg-blue-500'}
       shouldReset={props.shouldReset}
     >
+      <SkillSection title={'Languages'} labels={['SQL']} />
       <SkillSection
-        title={'Languages'}
-        labels={['HTML', 'CSS', 'JavaScript', 'TypeScript']}
-      />
-      <SkillSection
-        title={'Frameworks'}
-        labels={[
-          'React.js',
-          'Vue.js',
-          'Node.js',
-          'Next.js',
-          'Express.js',
-          'GraphQL',
-        ]}
+        title={'Databases'}
+        labels={['MySQL', 'Redis', 'MongoDB']}
       />
       <SkillSection
         title={'Tools'}
-        labels={[
-          'Redux',
-          'React Router',
-          'Vuex',
-          'Vue Router',
-          'Jest',
-          'ESLint',
-          'Husky',
-          'LintStage',
-          'Commitizen',
-          'NPM',
-          'Webpack',
-          'Rollup',
-          'Vite',
-          'Postman',
-        ]}
+        labels={['MySQL CLI', 'MySQL Bench', 'Redis CLI', 'MongoDB CLI']}
       />
-      <SkillSection title={'IDE'} labels={['Webstorm', 'VS Code']} />
+      <SkillSection title={'IDE'} labels={['Vim', 'DataGrip']} />
     </SkillCard>
   );
 };
