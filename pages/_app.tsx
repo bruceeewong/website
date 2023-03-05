@@ -1,5 +1,10 @@
 import '../styles/globals.css';
 import '../styles/gh-md-style.css';
+import 'swiper/css';
+import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 import type { AppProps } from 'next/app';
 import '../i18n';
 import { useRouter } from 'next/router';

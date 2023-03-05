@@ -1,7 +1,7 @@
 .badge {
   @apply flex justify-center items-center;
   @apply rounded-md px-2;
-  @apply bg-slate-300 text-slate-50;
+  @apply bg-white text-zinc-500;
 
   &Primary {
     @apply bg-sky-500 text-slate-50;

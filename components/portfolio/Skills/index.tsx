@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import 'swiper/css/pagination';
-
 import { FrontEndSkillCard } from './FrontEndSkillCard';
 import { EffectCards, Pagination } from 'swiper';
 import { BackEndSkillCard } from './BackEndSkillCard';
@@ -44,6 +40,11 @@ export const Skills = () => {
             <NetworkSkillCard shouldReset={activeCardIndex !== 3} />
           </SwiperSlide>
         </Swiper>
+      </div>
+      <div className={'text-center'}>
+        <p className={'text-xl'}>and my</p>
+        <h1 className={'text-4xl font-bold'}>PROJECTS</h1>
+        <p className={'text-xl'}>👇🏻👇🏻👇🏻</p>
       </div>
     </div>
   );

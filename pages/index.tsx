@@ -12,6 +12,9 @@ import Introduction from '../components/portfolio/Introduction';
 const Skills = dynamic(() => import('../components/portfolio/Skills'), {
   ssr: false,
 });
+const Projects = dynamic(() => import('../components/portfolio/Projects'), {
+  ssr: false,
+});
 const Contacts = dynamic(() => import('../components/portfolio/Contacts'), {
   ssr: false,
 });
@@ -27,6 +30,9 @@ const Home: NextPage = () => {
       </FullPageSection>
       <FullPageSection>
         <Skills />
+      </FullPageSection>
+      <FullPageSection>
+        <Projects />
       </FullPageSection>
       <FullPageSection>
         <Contacts />

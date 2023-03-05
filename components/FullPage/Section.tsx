@@ -5,7 +5,8 @@ export const Section: React.FC<StyleProps> = (props) => {
   return (
     <section
       className={classnames(
-        'relative h-[100vh] w-full snap-center',
+        'relative h-[100vh] w-full overflow-hidden',
+        'snap-center',
         props.className
       )}
       style={props.style}
