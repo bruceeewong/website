@@ -3,5 +3,8 @@
     "next/core-web-vitals",
     "plugin:prettier/recommended"
   ],
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "rules": {
+    "react/display-name": 0
+  }
 }

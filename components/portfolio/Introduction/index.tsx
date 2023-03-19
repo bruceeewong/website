@@ -39,14 +39,9 @@ export const Introduction = () => {
         >{`Hi 👋 My name is`}</p>
         <h1
           className={classnames(
-            'text-4xl font-bold',
+            'linear-gradient-text text-4xl font-bold',
             'tablet:mt-2 tablet:text-6xl tablet:leading-snug'
           )}
-          style={{
-            background: '-webkit-linear-gradient(0deg, #0ea5e9, #8b5cf6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
         >
           Bruski Wang
         </h1>
@@ -61,17 +56,15 @@ export const Introduction = () => {
         >{`with passions 🔥 for`}</p>
 
         <Typist
-          className={classnames('text-4xl font-bold', 'tablet:text-6xl')}
+          className={classnames(
+            'linear-gradient-text text-4xl font-bold',
+            'tablet:text-6xl'
+          )}
           sentences={personalTags}
           loop={true}
           showCursor={false}
           typingSpeed={100}
           deletingSpeed={50}
-          style={{
-            background: '-webkit-linear-gradient(0deg, #0ea5e9, #8b5cf6)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
         />
       </div>
 

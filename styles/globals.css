@@ -42,4 +42,10 @@
     .no-scrollbar::-webkit-scrollbar {
         display: none;
     }
+
+    .linear-gradient-text {
+        background: -webkit-linear-gradient(270deg, #0ea5e9, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
