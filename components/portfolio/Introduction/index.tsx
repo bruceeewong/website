@@ -9,7 +9,7 @@ export const Introduction = () => {
   const containerRef = useRef(null);
 
   const personalTags = useMemo(
-    () => [t('frontend'), t('web3Buidler'), t('skater'), t('basketball')],
+    () => [t('frontend'), t('backend'), t('networks'), t('blockchain')],
     [i18n.language]
   );
 
@@ -21,8 +21,8 @@ export const Introduction = () => {
       }
     >
       <Header className={'absolute top-0 z-10 px-6 py-4'} />
-      <div className={'flex w-full flex-col items-center'}>
-        <p className={'text-2xl'}>{`Hi, I'm`}</p>
+      <div className={'flex w-full flex-col '}>
+        <p className={'text-2xl'}>{`Hi 👋 My name is`}</p>
         <h1
           className={'mt-1 text-4xl font-bold'}
           style={{
@@ -33,13 +33,16 @@ export const Introduction = () => {
         >
           Bruski Wang
         </h1>
-        <p className={'mt-2 mb-2 text-2xl '}>a.k.a</p>
+        <p
+          className={'mt-4 mb-2 text-2xl'}
+        >{`I'm a fullstack developer with burning passions for `}</p>
         <Typist
           className={'text-4xl font-bold'}
           sentences={personalTags}
           loop={true}
           showCursor={false}
           typingSpeed={100}
+          deletingSpeed={50}
           style={{
             background: '-webkit-linear-gradient(0deg, #0ea5e9, #8b5cf6)',
             WebkitBackgroundClip: 'text',
