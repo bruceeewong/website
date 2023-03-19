@@ -85,7 +85,7 @@ export const Skills = () => {
         <p className={classnames('text-xl', 'tablet:text-4xl')}>Check out my</p>
         <h1
           className={classnames(
-            'linear-gradient-text mt-2 text-4xl font-bold',
+            'linear-gradient-text text-4xl font-bold',
             'tablet:my-2 tablet:text-6xl '
           )}
         >

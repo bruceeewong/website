@@ -5,6 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Bubble from '../../Bubble';
+import classnames from 'classnames';
 
 export const Contacts = () => {
   const year = useRef(new Date().getFullYear());
@@ -12,10 +13,24 @@ export const Contacts = () => {
     <FloatingBubbles className={'flex flex-col items-center justify-between'}>
       <section className={'flex flex-1 flex-col items-center justify-center'}>
         <div className={'text-center'}>
-          <p className={'text-xl'}>Feel free to</p>
-          <h1 className={'text-4xl font-bold'}>CONTACT ME</h1>
+          <p className={classnames('text-xl', 'tablet:text-4xl')}>
+            Feel free to
+          </p>
+          <h1
+            className={classnames(
+              'linear-gradient-text text-4xl font-bold',
+              'tablet:my-2 tablet:text-6xl'
+            )}
+          >
+            CONTACT ME
+          </h1>
         </div>
-        <div className={'mt-8 grid grid-cols-2 gap-6'}>
+        <div
+          className={classnames(
+            'mt-8 grid grid-cols-2 gap-6',
+            'tablet:mt-16 tablet:gap-12'
+          )}
+        >
           <Bubble
             icon={<LinkedInIcon className={'text-6xl'} />}
             color={'sky'}
