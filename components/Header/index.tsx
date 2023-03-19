@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = (props) => {
     <header
       className={classnames(
         props.className,
-        'flex w-full justify-between bg-white align-middle'
+        'flex w-full items-center justify-between bg-white'
       )}
     >
       <Badge
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = (props) => {
         <Link href={'/'}>BRUSKI</Link>
       </Badge>
 
-      <div className={'flex items-center'}>
+      <div className={'flex h-[36px] items-center'}>
         {isBreakpoint(['mobile', 'tablet']) ? (
           <div className={classnames('text-3xl', 'tablet:text-4xl')}>
             {showMenu ? (

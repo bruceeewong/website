@@ -22,12 +22,16 @@ export const Introduction = () => {
         ''
       )}
     >
-      <Header
+      <div
         className={classnames(
-          'absolute top-0 z-10 px-6 py-4',
-          'tablet:mx-auto tablet:max-w-[1440px] tablet:px-0 tablet:py-8'
+          'absolute top-0 z-10 w-full px-8 py-4',
+          'tablet:py-8'
         )}
-      />
+      >
+        <Header
+          className={classnames('tablet:mx-auto tablet:max-w-[1440px]')}
+        />
+      </div>
       <div
         className={classnames(
           'flex w-full flex-col',
