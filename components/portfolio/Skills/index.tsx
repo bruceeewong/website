@@ -9,9 +9,7 @@ import classnames from 'classnames';
 import { Breakpoint, useBreakpoint } from '../../../ utils/breakpoint';
 
 export const Skills = () => {
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
   const { breakpoint } = useBreakpoint();
-
   const getSwiper = function (breakpoint: Breakpoint) {
     if (breakpoint === 'desktop') {
       const PCSwiper: FC = (props) => {
@@ -42,6 +40,7 @@ export const Skills = () => {
       return PCSwiper;
     } else {
       const MobileSwiper: FC = (props) => {
+        const [activeCardIndex, setActiveCardIndex] = useState(0);
         return (
           <Swiper
             className={classnames('h-[400px] w-[280px]')}
